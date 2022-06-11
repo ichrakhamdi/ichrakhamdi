@@ -13,7 +13,7 @@
 
 - 📄 Know about my experiences [https://drive.google.com/file/d/1HqMNhjYC0JR9jQ6MIK0kZmbdtLnsrZTt/view?usp=sharing](https://drive.google.com/file/d/1HqMNhjYC0JR9jQ6MIK0kZmbdtLnsrZTt/view?usp=sharing)
 
-- ⚡ Fun fact **I drink too much cofee**
+- ⚡ Fun fact **I drink too much coffee**
 
 <h3 align="left">Connect with me:</h3>
 <p align="left">
