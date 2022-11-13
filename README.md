@@ -10,7 +10,7 @@
 - 💬 Ask me about **Computer Science, Machine Learning & Deep Learning, If I am alive I will answer within seconds.**
 
 - 📫 How to reach me **ichrak.hamdi@ensi-uma.tn**
-   or Take a look at this WWW.ichrakhamdi.live
+   or Take a look at this www.ichrakhamdi.live
 
 - 📄 Know about my experiences [https://drive.google.com/file/d/1HqMNhjYC0JR9jQ6MIK0kZmbdtLnsrZTt/view?usp=sharing](https://drive.google.com/file/d/1HqMNhjYC0JR9jQ6MIK0kZmbdtLnsrZTt/view?usp=sharing)
 
