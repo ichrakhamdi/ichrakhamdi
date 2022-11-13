@@ -1,7 +1,7 @@
 <h1 align="center">Hi 👋, I'm Ichrak Hamdi</h1>
 <h3 align="center">A computer science student, specializing in artificial intelligence at National School of Computer Sciences-ENSI.</h3>
 
-- 🌱 I’m currently learning **more about MLOps and Metaverse.**
+- 🌱 I’m currently learning **more about MLOps and RL.**
 
 - 👯 I’m looking to collaborate with **with any Open - Source projects**
 
@@ -10,6 +10,7 @@
 - 💬 Ask me about **Computer Science, Machine Learning & Deep Learning, If I am alive I will answer within seconds.**
 
 - 📫 How to reach me **ichrak.hamdi@ensi-uma.tn**
+   or Take a look at this WWW.ichrakhamdi.live
 
 - 📄 Know about my experiences [https://drive.google.com/file/d/1HqMNhjYC0JR9jQ6MIK0kZmbdtLnsrZTt/view?usp=sharing](https://drive.google.com/file/d/1HqMNhjYC0JR9jQ6MIK0kZmbdtLnsrZTt/view?usp=sharing)
 
