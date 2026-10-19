@@ -161,69 +161,48 @@ def hero():
 
 
 # ---------------------------------------------------------------- expertise
-def icon(kind, x, y, c):
-    """44px icon centred at (x, y)."""
-    s = f'stroke="{c}" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"'
-    if kind == "pipeline":
-        return (f'<circle cx="{x-12}" cy="{y}" r="5" {s}/><circle cx="{x+12}" cy="{y-9}" r="5" {s}/>'
-                f'<circle cx="{x+12}" cy="{y+9}" r="5" {s}/><path d="M{x-7} {y-2} L{x+7} {y-8} M{x-7} {y+2} L{x+7} {y+8}" {s}/>')
-    if kind == "wave":
-        return f'<path d="M{x-16} {y} Q{x-10} {y-14} {x-4} {y} T{x+8} {y} T{x+18} {y-6}" {s}/>'
-    if kind == "vision":
-        return (f'<path d="M{x-17} {y} Q{x} {y-15} {x+17} {y} Q{x} {y+15} {x-17} {y} Z" {s}/>'
-                f'<circle cx="{x}" cy="{y}" r="5" {s}/>')
-    if kind == "db":
-        return (f'<ellipse cx="{x}" cy="{y-9}" rx="13" ry="5" {s}/>'
-                f'<path d="M{x-13} {y-9} V{y+9} A13 5 0 0 0 {x+13} {y+9} V{y-9} M{x-13} {y} A13 5 0 0 0 {x+13} {y}" {s}/>')
-    if kind == "code":
-        return f'<path d="M{x-8} {y-9} L{x-17} {y} L{x-8} {y+9} M{x+8} {y-9} L{x+17} {y} L{x+8} {y+9} M{x+3} {y-12} L{x-3} {y+12}" {s}/>'
-    if kind == "shield":
-        return (f'<path d="M{x} {y-15} L{x+13} {y-9} V{y+1} Q{x+13} {y+11} {x} {y+16} Q{x-13} {y+11} {x-13} {y+1} V{y-9} Z" {s}/>'
-                f'<path d="M{x-5} {y+1} L{x-1} {y+5} L{x+6} {y-4}" {s}/>')
-    return ""
-
-
 def expertise():
-    W, cw, ch, gap, m = 1200, 376, 236, 16, 20
-    H = m * 2 + ch * 2 + gap
-    cards = [
-        ("pipeline", "#22D3EE", "ML Engineering",
-         ["End-to-end Python pipelines on real-world,", "noisy data: ingestion, preprocessing,", "training and evaluation."],
-         ["Python", "Pandas", "NumPy", "scikit-learn"]),
-        ("wave", "#A78BFA", "Time Series & Signals",
-         ["Forecasting and signal processing on large", "health datasets, including epilepsy data", "from IoT sensors."],
-         ["Forecasting", "Signal processing", "IoT"]),
-        ("vision", "#F472B6", "Deep Learning & Vision",
-         ["CNNs, U-Net, LSTMs and Transformers for", "segmentation, emotion recognition and", "network-traffic classification."],
-         ["PyTorch", "TensorFlow", "OpenCV"]),
-        ("db", "#FBBF24", "Data Engineering",
-         ["ETL workflows and data integration in the", "cloud, from SQL databases to streaming", "and big-data tools."],
-         ["SQL", "Azure", "Kafka", "Hadoop", "Docker"]),
-        ("code", "#34D399", "Code Review & Evaluation",
-         ["Reviewing, debugging and grading code in", "5 university courses. Evaluating AI agent", "behavior and model outputs."],
-         ["Debugging", "Feedback", "Agent evaluation"]),
-        ("shield", "#60A5FA", "AI for Cybersecurity",
-         ["PhD research on autonomous AI agents for", "the cyberdefense of industrial", "cyber-physical systems."],
-         ["Reinforcement learning", "ICS / OT"]),
+    # Two columns, three rows, large type: the image is shown at ~830px on GitHub.
+    W, m, rh = 1200, 56, 196
+    H = m * 2 + rh * 3 - 40
+    colx = [m, W // 2 + 28]
+    items = [
+        ("#22D3EE", "ML Engineering",
+         ["Built and maintained ML pipelines for epilepsy", "health data at Knowlepsy, from raw data to model."],
+         "Python · Pandas · NumPy · scikit-learn"),
+        ("#A78BFA", "Time Series & Signals",
+         ["Forecasting and signal processing on large,", "noisy sensor datasets."],
+         "Forecasting · Signal processing · IoT"),
+        ("#F472B6", "Deep Learning & Vision",
+         ["Segmentation, emotion recognition and attack", "detection with CNNs, U-Net, LSTMs, Transformers."],
+         "PyTorch · TensorFlow · OpenCV"),
+        ("#FBBF24", "Data Engineering",
+         ["ETL workflows and IoT data integration", "on Azure, from SQL to streaming."],
+         "SQL · Azure · Kafka · Hadoop · Docker"),
+        ("#34D399", "Code Review & Evaluation",
+         ["Reviewing, debugging and grading code in", "5 university courses; evaluating AI agents."],
+         "Debugging · Written feedback · Agent evaluation"),
+        ("#60A5FA", "AI for Cybersecurity",
+         ["PhD research on AI agents that defend", "industrial cyber-physical systems."],
+         "Reinforcement learning · ICS / OT"),
     ]
-    css = """
-      .card{fill:#0F172A;stroke:#1E293B;stroke-width:1.5}
-      .glow{animation:glow 6s ease-in-out infinite}
-      @keyframes glow{0%,100%{opacity:.35}50%{opacity:1}}"""
-    parts = []
-    for i, (ic, c, title, desc, tags) in enumerate(cards):
-        col, row = i % 3, i // 3
-        x, y = m + col * (cw + gap), m + row * (ch + gap)
-        parts.append(f'<rect x="{x}" y="{y}" width="{cw}" height="{ch}" rx="16" class="card"/>')
-        parts.append(f'<rect x="{x + 24}" y="{y}" width="{cw - 48}" height="3" rx="1.5" fill="{c}" class="glow" style="animation-delay:{i}s"/>')
-        parts.append(f'<circle cx="{x + 46}" cy="{y + 50}" r="24" fill="{c}" fill-opacity="0.12" stroke="{c}" stroke-opacity="0.4"/>')
-        parts.append(icon(ic, x + 46, y + 50, c))
-        parts.append(f'<text x="{x + 84}" y="{y + 57}" class="title">{escape(title)}</text>')
-        parts.append(lines(x + 24, y + 104, desc, "body", 21))
-        total = sum(len(t) * MONO_CW + 22 for t in tags) + 8 * (len(tags) - 1)
-        parts.append(chips(x + 24, y + ch - (46 if total <= cw - 48 else 80), tags, c, cw - 48))
+    css = f"""
+      .num{{font:600 17px {MONO}}}
+      .t{{font:700 27px {SANS};fill:#F8FAFC}}
+      .p{{font:400 19px {SANS};fill:#A8B3C4}}
+      .tools{{font:500 15px {MONO};fill:#7C8BA1}}"""
+    parts = [f'<line x1="{W // 2}" y1="{m}" x2="{W // 2}" y2="{H - m}" stroke="#1E293B" stroke-width="1.5"/>']
+    for r in (1, 2):
+        y = m + r * rh - 34
+        parts.append(f'<line x1="{m}" y1="{y}" x2="{W - m}" y2="{y}" stroke="#1E293B" stroke-width="1.5"/>')
+    for i, (c, title, desc, tools) in enumerate(items):
+        x, y = colx[i % 2], m + (i // 2) * rh
+        parts.append(f'<text x="{x}" y="{y + 20}" class="num" fill="{c}">{i + 1:02d}</text>')
+        parts.append(f'<text x="{x + 40}" y="{y + 22}" class="t">{escape(title)}</text>')
+        parts.append(lines(x + 40, y + 60, desc, "p", 27))
+        parts.append(f'<text x="{x + 40}" y="{y + 126}" class="tools">{escape(tools)}</text>')
     return svg(W, H, "What I do",
-               "Six expertise cards: ML engineering, time series and signals, deep learning and vision, data engineering, code review and evaluation, and AI for cybersecurity.",
+               "Six areas: ML engineering, time series and signals, deep learning and vision, data engineering, code review and evaluation, and AI for cybersecurity.",
                "", css, "\n".join(parts))
 
 
