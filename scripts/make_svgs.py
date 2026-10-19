@@ -173,48 +173,58 @@ def hero():
 
 
 # ---------------------------------------------------------------- expertise
+ICONS = Path(__file__).resolve().parent / "icons"  # devicon logos (MIT)
+
+
+def logo(name):
+    import base64
+    data = base64.b64encode((ICONS / f"{name}.svg").read_bytes()).decode()
+    return f"data:image/svg+xml;base64,{data}"
+
+
 def expertise():
-    # Two columns, three rows, large type: the image is shown at ~830px on GitHub.
-    W, m, rh = 1200, 56, 196
-    H = m * 2 + rh * 3 - 40
-    colx = [m, W // 2 + 28]
-    items = [
-        ("#22D3EE", "ML Engineering",
-         ["Built and maintained ML pipelines for epilepsy", "health data at Knowlepsy, from raw data to model."],
-         "Python · Pandas · NumPy · scikit-learn"),
-        ("#A78BFA", "Time Series & Signals",
-         ["Forecasting and signal processing on large,", "noisy sensor datasets."],
-         "Forecasting · Signal processing · IoT"),
-        ("#F472B6", "Deep Learning & Vision",
-         ["Segmentation, emotion recognition and attack", "detection with CNNs, U-Net, LSTMs, Transformers."],
-         "PyTorch · TensorFlow · OpenCV"),
-        ("#FBBF24", "Data Engineering",
-         ["ETL workflows and IoT data integration", "on Azure, from SQL to streaming."],
-         "SQL · Azure · Kafka · Hadoop · Docker"),
-        ("#34D399", "Code Review & Evaluation",
-         ["Reviewing, debugging and grading code in", "5 university courses; evaluating AI agents."],
-         "Debugging · Written feedback · Agent evaluation"),
-        ("#60A5FA", "AI for Cybersecurity",
-         ["PhD research on AI agents that defend", "industrial cyber-physical systems."],
-         "Reinforcement learning · ICS / OT"),
+    # Logo grid: one row per area, real logos on light tiles so dark marks stay visible.
+    W, m, label_w, tile, step = 1200, 48, 250, 72, 104
+    rows = [
+        ("Languages", [("python", "Python"), ("cplusplus", "C++"), ("java", "Java"),
+                       ("javascript", "JavaScript"), ("matlab", "MATLAB")]),
+        ("Machine Learning", [("pytorch", "PyTorch"), ("tensorflow", "TensorFlow"), ("scikitlearn", "scikit-learn"),
+                              ("opencv", "OpenCV"), ("jupyter", "Jupyter")]),
+        ("Data Science", [("pandas", "pandas"), ("numpy", "NumPy"), ("matplotlib", "Matplotlib")]),
+        ("Data & Cloud", [("mysql", "MySQL"), ("azure", "Azure"), ("apachekafka", "Kafka"),
+                          ("hadoop", "Hadoop"), ("docker", "Docker"), ("git", "Git")]),
     ]
+    rh = tile + 50
+    phd_y = m + len(rows) * rh + 6
+    H = phd_y + 60 + m
     css = f"""
-      .num{{font:600 17px {MONO}}}
-      .t{{font:700 27px {SANS};fill:#F8FAFC}}
-      .p{{font:400 19px {SANS};fill:#A8B3C4}}
-      .tools{{font:500 15px {MONO};fill:#7C8BA1}}"""
-    parts = [f'<line x1="{W // 2}" y1="{m}" x2="{W // 2}" y2="{H - m}" stroke="#1E293B" stroke-width="1.5"/>']
-    for r in (1, 2):
-        y = m + r * rh - 34
-        parts.append(f'<line x1="{m}" y1="{y}" x2="{W - m}" y2="{y}" stroke="#1E293B" stroke-width="1.5"/>')
-    for i, (c, title, desc, tools) in enumerate(items):
-        x, y = colx[i % 2], m + (i // 2) * rh
-        parts.append(f'<text x="{x}" y="{y + 20}" class="num" fill="{c}">{i + 1:02d}</text>')
-        parts.append(f'<text x="{x + 40}" y="{y + 22}" class="t">{escape(title)}</text>')
-        parts.append(lines(x + 40, y + 60, desc, "p", 27))
-        parts.append(f'<text x="{x + 40}" y="{y + 126}" class="tools">{escape(tools)}</text>')
+      .row{{font:700 22px {SANS};fill:#F8FAFC}}
+      .name{{font:500 14px {SANS};fill:#94A3B8}}
+      .pill{{font:600 16px {SANS};fill:#E9D5FF}}"""
+    parts = []
+    for r, (label, items) in enumerate(rows):
+        y = m + r * rh
+        parts.append(f'<text x="{m}" y="{y + tile / 2 + 8}" class="row">{escape(label)}</text>')
+        for i, (icon_name, name) in enumerate(items):
+            x = m + label_w + i * step
+            parts.append(f'<rect x="{x}" y="{y}" width="{tile}" height="{tile}" rx="16" fill="#F1F5F9"/>')
+            parts.append(f'<image x="{x + 14}" y="{y + 14}" width="{tile - 28}" height="{tile - 28}" href="{logo(icon_name)}"/>')
+            parts.append(f'<text x="{x + tile / 2}" y="{y + tile + 22}" text-anchor="middle" class="name">{escape(name)}</text>')
+        if r < len(rows) - 1:
+            parts.append(f'<line x1="{m}" y1="{y + rh - 6}" x2="{W - m}" y2="{y + rh - 6}" stroke="#1E293B" stroke-width="1.5"/>')
+    # PhD research row: topics, not tools
+    parts.append(f'<line x1="{m}" y1="{phd_y - 12}" x2="{W - m}" y2="{phd_y - 12}" stroke="#1E293B" stroke-width="1.5"/>')
+    parts.append(f'<text x="{m}" y="{phd_y + 36}" class="row">PhD Research</text>')
+    px = m + label_w
+    for t in ["Reinforcement Learning", "Industrial Cyber-Physical Systems", "Cybersecurity"]:
+        w = len(t) * 9.2 + 40
+        parts.append(f'<rect x="{px:.0f}" y="{phd_y + 8}" width="{w:.0f}" height="40" rx="20" fill="#A78BFA" fill-opacity="0.16" stroke="#A78BFA" stroke-opacity="0.7"/>')
+        parts.append(f'<text x="{px + w / 2:.0f}" y="{phd_y + 34}" text-anchor="middle" class="pill">{escape(t)}</text>')
+        px += w + 12
     return svg(W, H, "What I do",
-               "Six areas: ML engineering, time series and signals, deep learning and vision, data engineering, code review and evaluation, and AI for cybersecurity.",
+               "Tools by area. Languages: Python, C++, Java, JavaScript, MATLAB. Machine learning: PyTorch, TensorFlow, scikit-learn, OpenCV, Jupyter. "
+               "Data science: pandas, NumPy, Matplotlib. Data and cloud: MySQL, Azure, Kafka, Hadoop, Docker, Git. "
+               "PhD research: reinforcement learning, industrial cyber-physical systems, cybersecurity.",
                "", css, "\n".join(parts))
 
 
