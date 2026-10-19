@@ -1,6 +1,6 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="320" viewBox="0 0 1200 320" role="img" aria-labelledby="t d">
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="336" viewBox="0 0 1200 336" role="img" aria-labelledby="t d">
   <title id="t">Ichrak Hamdi: Machine Learning Engineer and Data Scientist</title>
-  <desc id="d">Banner with name and title, and an animated data pipeline from raw data through ETL and a model to evaluation, above a scrolling signal.</desc>
+  <desc id="d">Banner with name, title, PhD research areas (reinforcement learning, industrial cyber-physical systems), and an animated data pipeline from raw data through ETL and a model to evaluation, above a scrolling signal.</desc>
   <defs>
     <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
       <stop offset="0" stop-color="#0B1020"/>
@@ -33,20 +33,23 @@
       @keyframes slide{to{transform:translateX(-240px)}}
     </style>
   </defs>
-  <rect width="1200" height="320" rx="18" fill="url(#bg)"/>
-  <rect width="1200" height="320" rx="18" fill="url(#grid)"/>
+  <rect width="1200" height="336" rx="18" fill="url(#bg)"/>
+  <rect width="1200" height="336" rx="18" fill="url(#grid)"/>
 
-  <text x="64" y="104" class="h1">Ichrak Hamdi</text>
-  <text x="66" y="146" class="h2">Machine Learning Engineer · Data Scientist</text>
-  <text x="66" y="178" class="h3">PhD Researcher in Computer Science, Université Laval</text>
-  <text x="66" y="212" class="body" style="font-size:16px">End-to-end Python ML pipelines for real-world data:</text>
-  <text x="66" y="234" class="body" style="font-size:16px">ETL, time series, signal processing and deep learning.</text>
-  <rect x="66" y="252" width="73" height="28" rx="14" fill="#1E293B" stroke="#334155"/><text x="102" y="271" text-anchor="middle" class="lbl">Python</text>
-<rect x="149" y="252" width="49" height="28" rx="14" fill="#1E293B" stroke="#334155"/><text x="174" y="271" text-anchor="middle" class="lbl">SQL</text>
-<rect x="208" y="252" width="81" height="28" rx="14" fill="#1E293B" stroke="#334155"/><text x="248" y="271" text-anchor="middle" class="lbl">PyTorch</text>
-<rect x="299" y="252" width="104" height="28" rx="14" fill="#1E293B" stroke="#334155"/><text x="351" y="271" text-anchor="middle" class="lbl">TensorFlow</text>
-<rect x="413" y="252" width="112" height="28" rx="14" fill="#1E293B" stroke="#334155"/><text x="469" y="271" text-anchor="middle" class="lbl">Time series</text>
-<rect x="535" y="252" width="49" height="28" rx="14" fill="#1E293B" stroke="#334155"/><text x="559" y="271" text-anchor="middle" class="lbl">ETL</text>
+  <text x="64" y="92" class="h1">Ichrak Hamdi</text>
+  <text x="66" y="132" class="h2">Machine Learning Engineer · Data Scientist</text>
+  <text x="66" y="166" class="h3">PhD Researcher in Computer Science, Université Laval</text>
+  <rect x="66" y="180" width="200" height="30" rx="15" fill="#A78BFA" fill-opacity="0.16" stroke="#A78BFA" stroke-opacity="0.7"/><text x="166" y="200" text-anchor="middle" class="lbl" style="fill:#E9D5FF">Reinforcement Learning</text>
+<rect x="276" y="180" width="285" height="30" rx="15" fill="#A78BFA" fill-opacity="0.16" stroke="#A78BFA" stroke-opacity="0.7"/><text x="418" y="200" text-anchor="middle" class="lbl" style="fill:#E9D5FF">Industrial Cyber-Physical Systems</text>
+  <text x="66" y="246" class="body" style="font-size:16px">End-to-end Python ML pipelines for real-world data:</text>
+  <text x="66" y="268" class="body" style="font-size:16px">ETL, time series, signal processing and deep learning.</text>
+  <rect x="66" y="288" width="73" height="28" rx="14" fill="#1E293B" stroke="#334155"/><text x="102" y="307" text-anchor="middle" class="lbl">Python</text>
+<rect x="149" y="288" width="49" height="28" rx="14" fill="#1E293B" stroke="#334155"/><text x="174" y="307" text-anchor="middle" class="lbl">SQL</text>
+<rect x="208" y="288" width="81" height="28" rx="14" fill="#1E293B" stroke="#334155"/><text x="248" y="307" text-anchor="middle" class="lbl">PyTorch</text>
+<rect x="299" y="288" width="104" height="28" rx="14" fill="#1E293B" stroke="#334155"/><text x="351" y="307" text-anchor="middle" class="lbl">TensorFlow</text>
+<rect x="413" y="288" width="112" height="28" rx="14" fill="#1E293B" stroke="#334155"/><text x="469" y="307" text-anchor="middle" class="lbl">Time series</text>
+<rect x="535" y="288" width="49" height="28" rx="14" fill="#1E293B" stroke="#334155"/><text x="559" y="307" text-anchor="middle" class="lbl">ETL</text>
+  <g transform="translate(0 8)">
   <line x1="776" y1="130" x2="808" y2="130" stroke="#334155" stroke-width="2"/>
 <line x1="776" y1="130" x2="808" y2="130" class="flow"/>
 <path id="l0" d="M776 130 H808" fill="none"/>
@@ -100,4 +103,5 @@
     <polyline class="wave" points="680,264.0 686,268.9 692,272.3 698,273.6 704,273.2 710,272.0 716,271.1 722,270.8 728,270.5 734,269.1 740,266.1 746,261.6 752,256.9 758,253.5 764,252.3 770,253.4 776,255.9 782,258.4 788,260.3 794,261.4 800,260.3 806,261.4 812,266.0 818,272.6 824,278.2 830,279.9 836,276.9 842,270.6 848,264.4 854,260.9 860,260.8 866,262.5 872,263.2 878,261.1 884,256.3 890,251.2 896,248.9 902,251.2 908,257.5 914,265.1 920,267.0 926,269.5 932,270.5 938,270.8 944,271.3 950,272.4 956,273.5 962,273.5 968,271.6 974,267.6 980,262.6 986,258.0 992,255.2 998,254.5 1004,255.2 1010,256.3 1016,256.9 1022,257.1 1028,257.7 1034,259.5 1040,260.1 1046,267.3 1052,274.5 1058,278.6 1064,278.1 1070,273.8 1076,268.7 1082,265.4 1088,265.3 1094,267.0 1100,267.9 1106,265.7 1112,260.2 1118,253.4 1124,248.8 1130,248.5 1136,252.8 1142,259.4 1148,264.9 1154,267.3 1160,265.8 1166,267.0 1172,268.5 1178,270.9 1184,273.7 1190,275.5 1196,275.4 1202,272.8 1208,268.5 1214,263.8 1220,260.2 1226,258.2 1232,257.5 1238,257.2 1244,256.4 1250,255.2 1256,254.2 1262,254.7 1268,257.3 1274,261.7 1280,268.6 1286,274.4 1292,276.1 1298,273.9 1304,270.2 1310,267.9 1316,268.4 1322,270.8 1328,272.7 1334,271.4 1340,266.1 1346,258.5 1352,251.9 1358,249.1 1364,251.0 1370,255.8 1376,260.6 1382,262.8 1388,262.1 1394,260.4 1400,263.7 1406,266.8 1412,270.8 1418,274.4 1424,276.3 1430,275.7 1436,272.9 1442,269.1 1448,265.7 1454,263.3 1460,262.0 1466,260.8 1472,258.9 1478,256.3 1484,253.6 1490,252.2 1496,253.1 1502,256.3 1508,260.8 1514,265.3 1520,271.8 1526,271.2 1532,268.8 1538,267.5 1544,268.8 1550,272.5 1556,276.0 1562,276.4 1568,272.4 1574,265.0 1580,257.4 1586,252.7 1592,252.3 1598,255.2 1604,258.8 1610,260.2 1616,258.9 1622,256.3 1628,255.1 1634,257.7 1640,265.6" fill="none" stroke="url(#accent)" stroke-width="2"/>
   </g>
   <text x="692" y="252" class="lbl" style="font-size:11px;fill:#64748B">signal</text>
+  </g>
 </svg>

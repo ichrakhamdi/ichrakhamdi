@@ -21,7 +21,7 @@ python3 scripts/make_svgs.py            # writes into assets/
 ## Content rules
 
 - The profile targets **ML engineering, data science and code/model evaluation roles** (for example, data-annotation and evaluation contracts that want Python, SQL, code review and agent-evaluation experience). Lead with ML engineering. The PhD comes second.
-- **The PhD research is unpublished and confidential.** Describe it only as "autonomous AI agents for the cyberdefense of industrial cyber-physical systems". Don't add method details, architecture diagrams or pipeline descriptions, and don't mention hierarchical RL.
+- **The PhD research is unpublished and confidential.** Describe it only as "autonomous AI agents for the cyberdefense of industrial cyber-physical systems", tagged with reinforcement learning and industrial cyber-physical systems (the hero banner shows both as PhD chips). Don't add method details, architecture diagrams or pipeline descriptions, and don't mention hierarchical RL.
 - No emoji anywhere.
 - Experience, awards and education come from the owner's CV. Every project description must match what the linked repo contains. Don't invent metrics or years of experience.
 - The only contact email to publish is `ichrak.hamdi@ensi-uma.tn` (header and Connect badges). Never publish the phone number or the ulaval address.

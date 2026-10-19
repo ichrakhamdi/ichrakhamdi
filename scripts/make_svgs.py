@@ -73,7 +73,7 @@ def lines(x, y, rows, cls, dy):
 
 # ---------------------------------------------------------------- hero
 def hero():
-    W, H = 1200, 320
+    W, H = 1200, 336
     css = """
       .flow{stroke:url(#accent);stroke-width:2;stroke-dasharray:6 10;animation:dash 2.4s linear infinite}
       .node{fill:#0F172A;stroke-width:2}
@@ -88,10 +88,19 @@ def hero():
     for t in tags:
         w = len(t) * 7.8 + 26
         tag_svg.append(
-            f'<rect x="{tx:.0f}" y="252" width="{w:.0f}" height="28" rx="14" fill="#1E293B" stroke="#334155"/>'
-            f'<text x="{tx + w / 2:.0f}" y="271" text-anchor="middle" class="lbl">{t}</text>'
+            f'<rect x="{tx:.0f}" y="288" width="{w:.0f}" height="28" rx="14" fill="#1E293B" stroke="#334155"/>'
+            f'<text x="{tx + w / 2:.0f}" y="307" text-anchor="middle" class="lbl">{t}</text>'
         )
         tx += w + 10
+
+    phd_svg, px = [], 66
+    for t in ["Reinforcement Learning", "Industrial Cyber-Physical Systems"]:
+        w = len(t) * 7.8 + 28
+        phd_svg.append(
+            f'<rect x="{px:.0f}" y="180" width="{w:.0f}" height="30" rx="15" fill="#A78BFA" fill-opacity="0.16" stroke="#A78BFA" stroke-opacity="0.7"/>'
+            f'<text x="{px + w / 2:.0f}" y="200" text-anchor="middle" class="lbl" style="fill:#E9D5FF">{t}</text>'
+        )
+        px += w + 10
 
     # Pipeline nodes: data -> ETL -> model -> eval
     xs = [680, 808, 936, 1064]
@@ -145,18 +154,21 @@ def hero():
   <text x="692" y="252" class="lbl" style="font-size:11px;fill:#64748B">signal</text>"""
 
     body = f"""
-  <text x="64" y="104" class="h1">Ichrak Hamdi</text>
-  <text x="66" y="146" class="h2">Machine Learning Engineer · Data Scientist</text>
-  <text x="66" y="178" class="h3">PhD Researcher in Computer Science, Université Laval</text>
-  <text x="66" y="212" class="body" style="font-size:16px">End-to-end Python ML pipelines for real-world data:</text>
-  <text x="66" y="234" class="body" style="font-size:16px">ETL, time series, signal processing and deep learning.</text>
+  <text x="64" y="92" class="h1">Ichrak Hamdi</text>
+  <text x="66" y="132" class="h2">Machine Learning Engineer · Data Scientist</text>
+  <text x="66" y="166" class="h3">PhD Researcher in Computer Science, Université Laval</text>
+  {chr(10).join(phd_svg)}
+  <text x="66" y="246" class="body" style="font-size:16px">End-to-end Python ML pipelines for real-world data:</text>
+  <text x="66" y="268" class="body" style="font-size:16px">ETL, time series, signal processing and deep learning.</text>
   {chr(10).join(tag_svg)}
+  <g transform="translate(0 8)">
   {chr(10).join(links)}
   {chr(10).join(nodes)}
   {icons}
-  {wave}"""
+  {wave}
+  </g>"""
     return svg(W, H, "Ichrak Hamdi: Machine Learning Engineer and Data Scientist",
-               "Banner with name and title, and an animated data pipeline from raw data through ETL and a model to evaluation, above a scrolling signal.",
+               "Banner with name, title, PhD research areas (reinforcement learning, industrial cyber-physical systems), and an animated data pipeline from raw data through ETL and a model to evaluation, above a scrolling signal.",
                defs, css, body)
 
 
