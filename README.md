@@ -2,7 +2,7 @@
 
 <img src="./assets/hero.svg" alt="Ichrak Hamdi: Machine Learning Engineer and Data Scientist, PhD Researcher at Université Laval in reinforcement learning and industrial cyber-physical systems" width="100%" />
 
-<a href="https://www.linkedin.com/in/hamdi-ichrak-740bb81b9/"><img src="https://img.shields.io/badge/LinkedIn-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white" alt="LinkedIn" /></a>
+<a href="https://www.linkedin.com/in/ichrak-hamdi-740bb81b9/"><img src="https://img.shields.io/badge/LinkedIn-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white" alt="LinkedIn" /></a>
 <a href="mailto:ichrak.hamdi@ensi-uma.tn"><img src="https://img.shields.io/badge/Email-ichrak.hamdi%40ensi--uma.tn-24292F?style=for-the-badge&logo=gmail&logoColor=white" alt="Email ichrak.hamdi@ensi-uma.tn" /></a>
 <img src="https://img.shields.io/badge/Québec,%20Canada-4C8BF5?style=for-the-badge&logo=googlemaps&logoColor=white" alt="Québec, Canada" />
 <img src="https://img.shields.io/badge/Open%20to%20work-ML%20%26%20Data%20Science-22C55E?style=for-the-badge" alt="Open to ML and Data Science roles" />
@@ -78,7 +78,7 @@ I'm a machine learning engineer and data scientist. I build Python data pipeline
 
 **Hiring for ML engineering, data science or model evaluation? Let's talk.**
 
-<a href="https://www.linkedin.com/in/hamdi-ichrak-740bb81b9/"><img src="https://img.shields.io/badge/LinkedIn-Connect-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white" alt="Connect on LinkedIn" /></a>
+<a href="https://www.linkedin.com/in/ichrak-hamdi-740bb81b9/"><img src="https://img.shields.io/badge/LinkedIn-Connect-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white" alt="Connect on LinkedIn" /></a>
 <a href="mailto:ichrak.hamdi@ensi-uma.tn"><img src="https://img.shields.io/badge/Email-Let's%20talk-24292F?style=for-the-badge&logo=gmail&logoColor=white" alt="Email me" /></a>
 
 </div>
