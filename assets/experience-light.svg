@@ -1,0 +1,37 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="586" viewBox="0 0 1200 586" role="img" aria-labelledby="t d">
+  <title id="t">Experience</title>
+  <desc id="d">2025 – present: PhD in Computer Science, Université Laval · Québec. Autonomous AI agents for the cyberdefense of industrial cyber-physical systems.; 2025 – 2026: Course Lecturer &amp; Teaching Assistant, Université Laval · Québec. Taught 2 algorithms courses; TA for IoT Security and Advanced C++ (code review, grading).; 2024: Machine Learning Research Engineer, Knowlepsy · Remote. End-to-end ML pipelines for epilepsy health data: time series, signals, ETL on Azure.; 2023: AI Research Intern, UQAT · Rouyn-Noranda. Optimization algorithms for planning sidewalk snow-removal operations.; 2022: AI Intern, Talan Tunisie · Tunis. Distributed architectures for a metaverse project and motion detection algorithms.</desc>
+  <style>
+    .date{font:600 18px ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;fill:#59636E}
+    .role{font:700 24px 'Segoe UI',Ubuntu,'Helvetica Neue',Arial,sans-serif;fill:#1F2328}
+    .org{font:600 18px 'Segoe UI',Ubuntu,'Helvetica Neue',Arial,sans-serif}
+    .desc{font:400 19px 'Segoe UI',Ubuntu,'Helvetica Neue',Arial,sans-serif;fill:#59636E}
+  </style>
+<line x1="236" y1="26" x2="236" y2="556" stroke="#D0D7DE" stroke-width="2"/>
+<text x="208" y="34" text-anchor="end" class="date">2025 – present</text>
+<circle cx="236" cy="27" r="8" fill="#6D28D9"/>
+<circle cx="236" cy="27" r="8" fill="none" stroke="#6D28D9" stroke-width="2"><animate attributeName="r" values="8;16;8" dur="2.4s" repeatCount="indefinite"/><animate attributeName="opacity" values="1;0;1" dur="2.4s" repeatCount="indefinite"/></circle>
+<text x="268" y="36" class="role">PhD in Computer Science</text>
+<text x="268" y="64" class="org" fill="#6D28D9">Université Laval · Québec</text>
+<text x="268" y="92" class="desc">Autonomous AI agents for the cyberdefense of industrial cyber-physical systems.</text>
+<text x="208" y="152" text-anchor="end" class="date">2025 – 2026</text>
+<circle cx="236" cy="145" r="8" fill="#047857"/>
+<text x="268" y="154" class="role">Course Lecturer &amp; Teaching Assistant</text>
+<text x="268" y="182" class="org" fill="#047857">Université Laval · Québec</text>
+<text x="268" y="210" class="desc">Taught 2 algorithms courses; TA for IoT Security and Advanced C++ (code review, grading).</text>
+<text x="208" y="270" text-anchor="end" class="date">2024</text>
+<circle cx="236" cy="263" r="8" fill="#0E7490"/>
+<text x="268" y="272" class="role">Machine Learning Research Engineer</text>
+<text x="268" y="300" class="org" fill="#0E7490">Knowlepsy · Remote</text>
+<text x="268" y="328" class="desc">End-to-end ML pipelines for epilepsy health data: time series, signals, ETL on Azure.</text>
+<text x="208" y="388" text-anchor="end" class="date">2023</text>
+<circle cx="236" cy="381" r="8" fill="#B45309"/>
+<text x="268" y="390" class="role">AI Research Intern</text>
+<text x="268" y="418" class="org" fill="#B45309">UQAT · Rouyn-Noranda</text>
+<text x="268" y="446" class="desc">Optimization algorithms for planning sidewalk snow-removal operations.</text>
+<text x="208" y="506" text-anchor="end" class="date">2022</text>
+<circle cx="236" cy="499" r="8" fill="#BE185D"/>
+<text x="268" y="508" class="role">AI Intern</text>
+<text x="268" y="536" class="org" fill="#BE185D">Talan Tunisie · Tunis</text>
+<text x="268" y="564" class="desc">Distributed architectures for a metaverse project and motion detection algorithms.</text>
+</svg>

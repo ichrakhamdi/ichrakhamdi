@@ -1,4 +1,4 @@
-"""Generate the profile README SVGs (hero, expertise cards, experience timeline)."""
+"""Generate the profile README SVGs: hero banner, plus light/dark tech stack, experience and project cards."""
 import sys
 from html import escape
 from pathlib import Path
@@ -172,7 +172,38 @@ def hero():
                defs, css, body)
 
 
-# ---------------------------------------------------------------- expertise
+# ---------------------------------------------------------------- themed sections
+# Everything below has a transparent background and is generated twice
+# (name-light.svg / name-dark.svg) so the README can pick one with <picture>.
+THEMES = {
+    "light": {
+        "text": "#1F2328", "muted": "#59636E", "faint": "#818B98", "line": "#D0D7DE", "tile": "#F6F8FA",
+        "cyan": "#0E7490", "violet": "#6D28D9", "pink": "#BE185D", "amber": "#B45309", "green": "#047857", "blue": "#1D4ED8",
+    },
+    "dark": {
+        "text": "#E6EDF3", "muted": "#9198A1", "faint": "#6E7681", "line": "#30363D", "tile": "#F6F8FA",
+        "cyan": "#22D3EE", "violet": "#A78BFA", "pink": "#F472B6", "amber": "#FBBF24", "green": "#34D399", "blue": "#60A5FA",
+    },
+}
+
+
+def plain_svg(w, h, title, desc, css, body):
+    return f"""<svg xmlns="http://www.w3.org/2000/svg" width="{w}" height="{h}" viewBox="0 0 {w} {h}" role="img" aria-labelledby="t d">
+  <title id="t">{escape(title)}</title>
+  <desc id="d">{escape(desc)}</desc>
+  <style>{css}
+  </style>
+{body}
+</svg>
+"""
+
+
+def write_themed(name, fn):
+    for theme, t in THEMES.items():
+        (OUT / f"{name}-{theme}.svg").write_text(fn(t))
+
+
+# ---------------------------------------------------------------- tech stack
 ICONS = Path(__file__).resolve().parent / "icons"  # devicon logos (MIT)
 
 
@@ -182,9 +213,9 @@ def logo(name):
     return f"data:image/svg+xml;base64,{data}"
 
 
-def expertise():
-    # Logo grid: one row per area, real logos on light tiles so dark marks stay visible.
-    W, m, label_w, tile, step = 1200, 48, 250, 72, 104
+def stack(t):
+    # One row per area; logos sit on light tiles so dark marks (Kafka) stay visible in dark mode.
+    W, m, label_w, tile, step = 1200, 8, 260, 76, 110
     rows = [
         ("Languages", [("python", "Python"), ("cplusplus", "C++"), ("java", "Java"),
                        ("javascript", "JavaScript"), ("matlab", "MATLAB")]),
@@ -194,168 +225,116 @@ def expertise():
         ("Data & Cloud", [("mysql", "MySQL"), ("azure", "Azure"), ("apachekafka", "Kafka"),
                           ("hadoop", "Hadoop"), ("docker", "Docker"), ("git", "Git")]),
     ]
-    rh = tile + 50
-    phd_y = m + len(rows) * rh + 6
-    H = phd_y + 60 + m
+    rh = tile + 56
+    H = m + len(rows) * rh
     css = f"""
-      .row{{font:700 22px {SANS};fill:#F8FAFC}}
-      .name{{font:500 14px {SANS};fill:#94A3B8}}
-      .pill{{font:600 16px {SANS};fill:#E9D5FF}}"""
+    .row{{font:700 24px {SANS};fill:{t['text']}}}
+    .name{{font:500 17px {SANS};fill:{t['muted']}}}"""
     parts = []
     for r, (label, items) in enumerate(rows):
         y = m + r * rh
-        parts.append(f'<text x="{m}" y="{y + tile / 2 + 8}" class="row">{escape(label)}</text>')
+        parts.append(f'<text x="{m}" y="{y + tile / 2 + 9}" class="row">{escape(label)}</text>')
         for i, (icon_name, name) in enumerate(items):
             x = m + label_w + i * step
-            parts.append(f'<rect x="{x}" y="{y}" width="{tile}" height="{tile}" rx="16" fill="#F1F5F9"/>')
-            parts.append(f'<image x="{x + 14}" y="{y + 14}" width="{tile - 28}" height="{tile - 28}" href="{logo(icon_name)}"/>')
-            parts.append(f'<text x="{x + tile / 2}" y="{y + tile + 22}" text-anchor="middle" class="name">{escape(name)}</text>')
-        if r < len(rows) - 1:
-            parts.append(f'<line x1="{m}" y1="{y + rh - 6}" x2="{W - m}" y2="{y + rh - 6}" stroke="#1E293B" stroke-width="1.5"/>')
-    # PhD research row: topics, not tools
-    parts.append(f'<line x1="{m}" y1="{phd_y - 12}" x2="{W - m}" y2="{phd_y - 12}" stroke="#1E293B" stroke-width="1.5"/>')
-    parts.append(f'<text x="{m}" y="{phd_y + 36}" class="row">PhD Research</text>')
-    px = m + label_w
-    for t in ["Reinforcement Learning", "Industrial Cyber-Physical Systems", "Cybersecurity"]:
-        w = len(t) * 9.2 + 40
-        parts.append(f'<rect x="{px:.0f}" y="{phd_y + 8}" width="{w:.0f}" height="40" rx="20" fill="#A78BFA" fill-opacity="0.16" stroke="#A78BFA" stroke-opacity="0.7"/>')
-        parts.append(f'<text x="{px + w / 2:.0f}" y="{phd_y + 34}" text-anchor="middle" class="pill">{escape(t)}</text>')
-        px += w + 12
-    return svg(W, H, "What I do",
-               "Tools by area. Languages: Python, C++, Java, JavaScript, MATLAB. Machine learning: PyTorch, TensorFlow, scikit-learn, OpenCV, Jupyter. "
-               "Data science: pandas, NumPy, Matplotlib. Data and cloud: MySQL, Azure, Kafka, Hadoop, Docker, Git. "
-               "PhD research: reinforcement learning, industrial cyber-physical systems, cybersecurity.",
-               "", css, "\n".join(parts))
+            parts.append(f'<rect x="{x}" y="{y}" width="{tile}" height="{tile}" rx="16" fill="{t["tile"]}" stroke="{t["line"]}"/>')
+            parts.append(f'<image x="{x + 15}" y="{y + 15}" width="{tile - 30}" height="{tile - 30}" href="{logo(icon_name)}"/>')
+            parts.append(f'<text x="{x + tile / 2}" y="{y + tile + 26}" text-anchor="middle" class="name">{escape(name)}</text>')
+    return plain_svg(W, H, "Tech stack",
+                     "Languages: Python, C++, Java, JavaScript, MATLAB. Machine learning: PyTorch, TensorFlow, scikit-learn, OpenCV, Jupyter. "
+                     "Data science: pandas, NumPy, Matplotlib. Data and cloud: MySQL, Azure, Kafka, Hadoop, Docker, Git.",
+                     css, "\n".join(parts))
 
 
 # ---------------------------------------------------------------- experience
-def experience():
-    W, H = 1200, 440
-    ty = 220  # timeline y
-    x0, x1 = 60, 1140
-
-    def yx(year, month=1):
-        # 2022-01 -> 100, 250px per year
-        return 100 + (year - 2022 + (month - 1) / 12) * 250
-
-    css = """
-      .card{fill:#0F172A;stroke:#1E293B;stroke-width:1.5}
-      .now{animation:now 2s ease-in-out infinite;transform-origin:center;transform-box:fill-box}
-      @keyframes now{0%,100%{transform:scale(1);opacity:1}50%{transform:scale(1.8);opacity:.2}}"""
-    entries = [
-        # (start x, slot centre, above?, colour, dates, role, org, desc)
-        (yx(2022, 7), 190, True, "#94A3B8", "JUL 2022 – AUG 2022", "AI Intern", "Talan Tunisie",
-         ["Distributed architectures for a", "metaverse project; motion detection."]),
-        (yx(2023, 3), 395, False, "#A78BFA", "MAR 2023 – AUG 2023", "AI Research Intern", "UQAT, Québec",
-         ["Optimization algorithms for planning", "sidewalk snow-removal operations."]),
-        (yx(2024, 1), 600, True, "#22D3EE", "JAN 2024 – DEC 2024", "ML Research Engineer", "Knowlepsy · Remote",
-         ["ML pipelines on epilepsy health data:", "time series, signals, ETL on Azure."]),
-        (yx(2025, 1), 805, False, "#F472B6", "JAN 2025 – PRESENT", "PhD in Computer Science", "Université Laval",
-         ["AI agents for the cyberdefense of", "industrial cyber-physical systems."]),
-        (yx(2025, 5), 1010, True, "#34D399", "MAY 2025 – MAY 2026", "Course Lecturer & TA", "Université Laval",
-         ["Taught 2 algorithms courses; TA for", "IoT Security and Advanced C++."]),
-    ]
-    cw, chh = 330, 138
-    parts = [
-        f'<line x1="{x0}" y1="{ty}" x2="{x1}" y2="{ty}" stroke="#334155" stroke-width="2"/>',
-        f'<line x1="{x0}" y1="{ty}" x2="{x1}" y2="{ty}" stroke="url(#accent)" stroke-width="2" stroke-dasharray="4 8" opacity=".6"/>',
-    ]
-    for yr in range(2022, 2027):
-        x = yx(yr)
-        parts.append(f'<line x1="{x}" y1="{ty - 6}" x2="{x}" y2="{ty + 6}" stroke="#475569" stroke-width="2"/>')
-        parts.append(f'<text x="{x + 6}" y="{ty + 22}" class="mono" fill="#64748B">{yr}</text>')
-    for sx, slot, above, c, dates, role, org, desc in entries:
-        cx = slot - cw / 2
-        cy = ty - 40 - chh if above else ty + 40
-        ay = cy + chh if above else cy
-        parts.append(f'<path d="M{slot} {ay} L{slot} {ty + (-22 if above else 22)} L{sx} {ty}" fill="none" stroke="{c}" stroke-opacity=".5" stroke-width="1.5"/>')
-        parts.append(f'<circle cx="{sx}" cy="{ty}" r="6" fill="#0B1020" stroke="{c}" stroke-width="2.5"/>')
-        parts.append(f'<rect x="{cx}" y="{cy}" width="{cw}" height="{chh}" rx="14" class="card"/>')
-        parts.append(f'<rect x="{cx}" y="{cy + 18}" width="3" height="{chh - 36}" rx="1.5" fill="{c}"/>')
-        parts.append(f'<text x="{cx + 22}" y="{cy + 28}" class="mono" fill="{c}">{dates}</text>')
-        parts.append(f'<text x="{cx + 22}" y="{cy + 54}" class="title" style="font-size:18px">{escape(role)}</text>')
-        parts.append(f'<text x="{cx + 22}" y="{cy + 76}" class="org">{escape(org)}</text>')
-        parts.append(lines(cx + 22, cy + 102, desc, "small", 19))
-    # pulsing "now" marker at the end of the line
-    nx = yx(2026, 10)
-    parts.append(f'<circle cx="{nx}" cy="{ty}" r="5" fill="#22D3EE" class="now"/>')
-    parts.append(f'<circle cx="{nx}" cy="{ty}" r="5" fill="#22D3EE"/>')
-    parts.append(f'<text x="{nx + 10}" y="{ty - 10}" class="mono" fill="#22D3EE">now</text>')
-    return svg(W, H, "Experience timeline",
-               "Timeline from 2022 to 2026: AI Intern at Talan Tunisie, AI Research Intern at UQAT, ML Research Engineer at Knowlepsy, PhD in Computer Science at Université Laval, and Course Lecturer and TA at Université Laval.",
-               "", css, "\n".join(parts))
+EXPERIENCE = [
+    # (dates, role, org, description, accent)
+    ("2025 – present", "PhD in Computer Science", "Université Laval · Québec",
+     "Autonomous AI agents for the cyberdefense of industrial cyber-physical systems.", "violet"),
+    ("2025 – 2026", "Course Lecturer & Teaching Assistant", "Université Laval · Québec",
+     "Taught 2 algorithms courses; TA for IoT Security and Advanced C++ (code review, grading).", "green"),
+    ("2024", "Machine Learning Research Engineer", "Knowlepsy · Remote",
+     "End-to-end ML pipelines for epilepsy health data: time series, signals, ETL on Azure.", "cyan"),
+    ("2023", "AI Research Intern", "UQAT · Rouyn-Noranda",
+     "Optimization algorithms for planning sidewalk snow-removal operations.", "amber"),
+    ("2022", "AI Intern", "Talan Tunisie · Tunis",
+     "Distributed architectures for a metaverse project and motion detection algorithms.", "pink"),
+]
 
 
-(OUT / "hero.svg").write_text(hero())
-(OUT / "expertise.svg").write_text(expertise())
-(OUT / "experience.svg").write_text(experience())
-print("ok")
+def experience(t):
+    W, rh, top = 1200, 118, 14
+    H = top + rh * len(EXPERIENCE) - 18
+    lx = 236  # timeline x
+    css = f"""
+    .date{{font:600 18px {MONO};fill:{t['muted']}}}
+    .role{{font:700 24px {SANS};fill:{t['text']}}}
+    .org{{font:600 18px {SANS}}}
+    .desc{{font:400 19px {SANS};fill:{t['muted']}}}"""
+    parts = [f'<line x1="{lx}" y1="{top + 12}" x2="{lx}" y2="{H - 30}" stroke="{t["line"]}" stroke-width="2"/>']
+    for i, (dates, role, org, desc, accent) in enumerate(EXPERIENCE):
+        y = top + i * rh
+        c = t[accent]
+        parts.append(f'<text x="{lx - 28}" y="{y + 20}" text-anchor="end" class="date">{escape(dates)}</text>')
+        parts.append(f'<circle cx="{lx}" cy="{y + 13}" r="8" fill="{c}"/>')
+        if i == 0:
+            parts.append(f'<circle cx="{lx}" cy="{y + 13}" r="8" fill="none" stroke="{c}" stroke-width="2">'
+                         '<animate attributeName="r" values="8;16;8" dur="2.4s" repeatCount="indefinite"/>'
+                         '<animate attributeName="opacity" values="1;0;1" dur="2.4s" repeatCount="indefinite"/></circle>')
+        parts.append(f'<text x="{lx + 32}" y="{y + 22}" class="role">{escape(role)}</text>')
+        parts.append(f'<text x="{lx + 32}" y="{y + 50}" class="org" fill="{c}">{escape(org)}</text>')
+        parts.append(f'<text x="{lx + 32}" y="{y + 78}" class="desc">{escape(desc)}</text>')
+    return plain_svg(W, H, "Experience",
+                     "; ".join(f"{d}: {r}, {o}. {ds}" for d, r, o, ds, _ in EXPERIENCE), css, "\n".join(parts))
 
 
 # ---------------------------------------------------------------- projects
-def project(title, kicker, color, desc, tags, award=None):
-    W, H = 580, 250
-    css = """
-      .card{fill:#0F172A;stroke:#1E293B;stroke-width:1.5}
-      .link{font:600 13px ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;fill:#64748B}"""
-    parts = [
-        f'<rect x="1" y="1" width="{W - 2}" height="{H - 2}" rx="17" fill="none" stroke="{color}" stroke-opacity=".35"/>',
-        f'<rect x="28" y="0" width="80" height="3" rx="1.5" fill="{color}"/>',
-        f'<text x="28" y="44" class="mono" fill="{color}">{escape(kicker.upper())}</text>',
-        f'<text x="28" y="76" class="title" style="font-size:22px">{escape(title)}</text>',
-        lines(28, 108, desc, "body", 21),
-        chips(28, H - 50, tags, color, W - 56),
-        f'<text x="{W - 28}" y="44" text-anchor="end" class="link">view repo →</text>',
-    ]
-    if award:
-        w = len(award) * 7.0 + 40
-        parts.append(f'<rect x="{W - 28 - w:.0f}" y="{H - 50}" width="{w:.0f}" height="26" rx="13" fill="#FBBF24" fill-opacity=".15" stroke="#FBBF24" stroke-opacity=".6"/>')
-        parts.append(f'<path d="M{W - 28 - w + 16:.0f} {H - 43} l3 6 6 1 -4.5 4 1 6 -5.5 -3 -5.5 3 1 -6 -4.5 -4 6 -1z" fill="#FBBF24"/>')
-        parts.append(f'<text x="{W - 28 - w + 28:.0f}" y="{H - 33}" class="chip" style="fill:#FDE68A">{escape(award)}</text>')
-    return svg(W, H, title, f"{kicker}: {' '.join(desc)}", "", css, "\n".join(parts))
-
-
 PROJECTS = {
-    "project-traffic": ("Network Traffic Classification", "Deep learning · Security", "#22D3EE",
-        ["Detects and classifies cyberattacks in network traffic.", "Compares LSTM, Transformer, CNN-Transformer and",
-         "FT-Transformer in one configurable pipeline."],
-        ["TensorFlow", "LSTM", "Transformers", "scikit-learn"]),
-    "project-mammogram": ("Mammogram Segmentation", "Computer vision · Health", "#F472B6",
-        ["Django web app and comparative study of U-Net,", "Fuzzy C-Means and Expectation-Maximization for",
-         "breast-cancer screening images."],
-        ["U-Net", "Django", "Python"], "Best poster · DL Indaba"),
-    "project-emotion": ("Facial Emotion Detection", "Computer vision · Real time", "#A78BFA",
-        ["Real-time facial expression recognition with", "convolutional neural networks. Led the project",
-         "team from objectives to delivery."],
-        ["TensorFlow", "OpenCV", "CNN"]),
-    "project-mario": ("Super Mario RL Agent", "Reinforcement learning", "#34D399",
-        ["A Double-DQN agent with experience replay and a", "target network that learns to play Super Mario",
-         "Bros from raw pixels."],
-        ["TensorFlow", "DQN", "Gym"]),
+    "project-traffic": ("Network Traffic Classification", "Deep learning · Security", "cyan",
+        ["Detects cyberattacks in network traffic and", "compares LSTM and Transformer models."],
+        ["TensorFlow", "LSTM", "Transformers"], None),
+    "project-mammogram": ("Mammogram Segmentation", "Computer vision · Health", "pink",
+        ["U-Net vs Fuzzy C-Means vs EM for breast-", "cancer screening, served in a Django app."],
+        ["U-Net", "Django", "Python"], "Best poster"),
+    "project-emotion": ("Facial Emotion Detection", "Computer vision · Real time", "violet",
+        ["Real-time facial expression recognition", "with convolutional neural networks."],
+        ["TensorFlow", "OpenCV", "CNN"], None),
+    "project-mario": ("Super Mario RL Agent", "Reinforcement learning", "green",
+        ["A Double-DQN agent that learns to play", "Super Mario Bros from raw pixels."],
+        ["TensorFlow", "DQN", "Gym"], None),
 }
-for name, args in PROJECTS.items():
-    (OUT / f"{name}.svg").write_text(project(*args))
 
 
-# ---------------------------------------------------------------- highlights
-def highlights():
-    W, H, m, gap = 1200, 150, 20, 16
-    tw = (W - 2 * m - 3 * gap) / 4
-    tiles = [
-        ("#22D3EE", "Industry ML", ["ML Research Engineer", "Knowlepsy · health data"]),
-        ("#34D399", "5", ["university courses taught", "or assisted · Université Laval"]),
-        ("#FBBF24", "Best poster", ["+ Ideathon winner", "Deep Learning Indaba"]),
-        ("#F472B6", "Recognition", ["Departmental award for", "teaching · Université Laval"]),
+def project(t, title, kicker, accent, desc, tags, award):
+    W, H, p = 580, 260, 30
+    c = t[accent]
+    css = f"""
+    .k{{font:700 15px {MONO};fill:{c}}}
+    .ti{{font:700 28px {SANS};fill:{t['text']}}}
+    .d{{font:400 20px {SANS};fill:{t['muted']}}}
+    .chip{{font:600 15px {MONO};fill:{t['text']}}}
+    .go{{font:600 16px {SANS};fill:{t['faint']}}}"""
+    parts = [
+        f'<rect x="1" y="1" width="{W - 2}" height="{H - 2}" rx="16" fill="none" stroke="{t["line"]}" stroke-width="1.5"/>',
+        f'<rect x="{p}" y="0" width="64" height="4" rx="2" fill="{c}"/>',
+        f'<text x="{p}" y="46" class="k">{escape(kicker.upper())}</text>',
+        f'<text x="{W - p}" y="46" text-anchor="end" class="go">View repo →</text>',
+        f'<text x="{p}" y="88" class="ti">{escape(title)}</text>',
+        lines(p, 126, desc, "d", 28),
     ]
-    parts = []
-    for i, (c, big, sub) in enumerate(tiles):
-        x = m + i * (tw + gap)
-        parts.append(f'<rect x="{x:.0f}" y="{m}" width="{tw:.0f}" height="{H - 2 * m}" rx="14" fill="#0F172A" stroke="#1E293B" stroke-width="1.5"/>')
-        parts.append(f'<rect x="{x + 22:.0f}" y="{m + 22}" width="3" height="{H - 2 * m - 44}" rx="1.5" fill="{c}"/>')
-        parts.append(f'<text x="{x + 40:.0f}" y="{m + 50}" style="font:700 28px {SANS};fill:{c}">{escape(big)}</text>')
-        parts.append(lines(int(x + 40), m + 76, sub, "small", 19))
-    return svg(W, H, "Highlights", "Highlights: " + "; ".join(f"{b} {' '.join(s)}" for _, b, s in tiles), "", "", "\n".join(parts))
+    cx = p
+    for lab in tags + ([award] if award else []):
+        is_award = lab == award
+        col = t["amber"] if is_award else c
+        w = len(lab) * 9.3 + 28
+        parts.append(f'<rect x="{cx:.0f}" y="{H - 64}" width="{w:.0f}" height="34" rx="17" fill="{col}" fill-opacity=".12" stroke="{col}" stroke-opacity=".55"/>')
+        parts.append(f'<text x="{cx + w / 2:.0f}" y="{H - 41}" text-anchor="middle" class="chip">{escape(lab)}</text>')
+        cx += w + 10
+    return plain_svg(W, H, title, f"{kicker}. {' '.join(desc)}", css, "\n".join(parts))
 
 
-(OUT / "highlights.svg").write_text(highlights())
-print("ok2")
+(OUT / "hero.svg").write_text(hero())
+write_themed("stack", stack)
+write_themed("experience", experience)
+for name, args in PROJECTS.items():
+    write_themed(name, lambda t, a=args: project(t, *a))
+print("ok")

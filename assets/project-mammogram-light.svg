@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="580" height="260" viewBox="0 0 580 260" role="img" aria-labelledby="t d">
+  <title id="t">Mammogram Segmentation</title>
+  <desc id="d">Computer vision · Health. U-Net vs Fuzzy C-Means vs EM for breast- cancer screening, served in a Django app.</desc>
+  <style>
+    .k{font:700 15px ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;fill:#BE185D}
+    .ti{font:700 28px 'Segoe UI',Ubuntu,'Helvetica Neue',Arial,sans-serif;fill:#1F2328}
+    .d{font:400 20px 'Segoe UI',Ubuntu,'Helvetica Neue',Arial,sans-serif;fill:#59636E}
+    .chip{font:600 15px ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;fill:#1F2328}
+    .go{font:600 16px 'Segoe UI',Ubuntu,'Helvetica Neue',Arial,sans-serif;fill:#818B98}
+  </style>
+<rect x="1" y="1" width="578" height="258" rx="16" fill="none" stroke="#D0D7DE" stroke-width="1.5"/>
+<rect x="30" y="0" width="64" height="4" rx="2" fill="#BE185D"/>
+<text x="30" y="46" class="k">COMPUTER VISION · HEALTH</text>
+<text x="550" y="46" text-anchor="end" class="go">View repo →</text>
+<text x="30" y="88" class="ti">Mammogram Segmentation</text>
+<text x="30" y="126" class="d">U-Net vs Fuzzy C-Means vs EM for breast-</text>
+<text x="30" y="154" class="d">cancer screening, served in a Django app.</text>
+<rect x="30" y="196" width="74" height="34" rx="17" fill="#BE185D" fill-opacity=".12" stroke="#BE185D" stroke-opacity=".55"/>
+<text x="67" y="219" text-anchor="middle" class="chip">U-Net</text>
+<rect x="114" y="196" width="84" height="34" rx="17" fill="#BE185D" fill-opacity=".12" stroke="#BE185D" stroke-opacity=".55"/>
+<text x="156" y="219" text-anchor="middle" class="chip">Django</text>
+<rect x="208" y="196" width="84" height="34" rx="17" fill="#BE185D" fill-opacity=".12" stroke="#BE185D" stroke-opacity=".55"/>
+<text x="250" y="219" text-anchor="middle" class="chip">Python</text>
+<rect x="302" y="196" width="130" height="34" rx="17" fill="#B45309" fill-opacity=".12" stroke="#B45309" stroke-opacity=".55"/>
+<text x="367" y="219" text-anchor="middle" class="chip">Best poster</text>
+</svg>

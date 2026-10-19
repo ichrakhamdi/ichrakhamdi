@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="580" height="260" viewBox="0 0 580 260" role="img" aria-labelledby="t d">
+  <title id="t">Facial Emotion Detection</title>
+  <desc id="d">Computer vision · Real time. Real-time facial expression recognition with convolutional neural networks.</desc>
+  <style>
+    .k{font:700 15px ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;fill:#6D28D9}
+    .ti{font:700 28px 'Segoe UI',Ubuntu,'Helvetica Neue',Arial,sans-serif;fill:#1F2328}
+    .d{font:400 20px 'Segoe UI',Ubuntu,'Helvetica Neue',Arial,sans-serif;fill:#59636E}
+    .chip{font:600 15px ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;fill:#1F2328}
+    .go{font:600 16px 'Segoe UI',Ubuntu,'Helvetica Neue',Arial,sans-serif;fill:#818B98}
+  </style>
+<rect x="1" y="1" width="578" height="258" rx="16" fill="none" stroke="#D0D7DE" stroke-width="1.5"/>
+<rect x="30" y="0" width="64" height="4" rx="2" fill="#6D28D9"/>
+<text x="30" y="46" class="k">COMPUTER VISION · REAL TIME</text>
+<text x="550" y="46" text-anchor="end" class="go">View repo →</text>
+<text x="30" y="88" class="ti">Facial Emotion Detection</text>
+<text x="30" y="126" class="d">Real-time facial expression recognition</text>
+<text x="30" y="154" class="d">with convolutional neural networks.</text>
+<rect x="30" y="196" width="121" height="34" rx="17" fill="#6D28D9" fill-opacity=".12" stroke="#6D28D9" stroke-opacity=".55"/>
+<text x="90" y="219" text-anchor="middle" class="chip">TensorFlow</text>
+<rect x="161" y="196" width="84" height="34" rx="17" fill="#6D28D9" fill-opacity=".12" stroke="#6D28D9" stroke-opacity=".55"/>
+<text x="203" y="219" text-anchor="middle" class="chip">OpenCV</text>
+<rect x="255" y="196" width="56" height="34" rx="17" fill="#6D28D9" fill-opacity=".12" stroke="#6D28D9" stroke-opacity=".55"/>
+<text x="283" y="219" text-anchor="middle" class="chip">CNN</text>
+</svg>

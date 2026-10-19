@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="580" height="260" viewBox="0 0 580 260" role="img" aria-labelledby="t d">
+  <title id="t">Super Mario RL Agent</title>
+  <desc id="d">Reinforcement learning. A Double-DQN agent that learns to play Super Mario Bros from raw pixels.</desc>
+  <style>
+    .k{font:700 15px ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;fill:#047857}
+    .ti{font:700 28px 'Segoe UI',Ubuntu,'Helvetica Neue',Arial,sans-serif;fill:#1F2328}
+    .d{font:400 20px 'Segoe UI',Ubuntu,'Helvetica Neue',Arial,sans-serif;fill:#59636E}
+    .chip{font:600 15px ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;fill:#1F2328}
+    .go{font:600 16px 'Segoe UI',Ubuntu,'Helvetica Neue',Arial,sans-serif;fill:#818B98}
+  </style>
+<rect x="1" y="1" width="578" height="258" rx="16" fill="none" stroke="#D0D7DE" stroke-width="1.5"/>
+<rect x="30" y="0" width="64" height="4" rx="2" fill="#047857"/>
+<text x="30" y="46" class="k">REINFORCEMENT LEARNING</text>
+<text x="550" y="46" text-anchor="end" class="go">View repo →</text>
+<text x="30" y="88" class="ti">Super Mario RL Agent</text>
+<text x="30" y="126" class="d">A Double-DQN agent that learns to play</text>
+<text x="30" y="154" class="d">Super Mario Bros from raw pixels.</text>
+<rect x="30" y="196" width="121" height="34" rx="17" fill="#047857" fill-opacity=".12" stroke="#047857" stroke-opacity=".55"/>
+<text x="90" y="219" text-anchor="middle" class="chip">TensorFlow</text>
+<rect x="161" y="196" width="56" height="34" rx="17" fill="#047857" fill-opacity=".12" stroke="#047857" stroke-opacity=".55"/>
+<text x="189" y="219" text-anchor="middle" class="chip">DQN</text>
+<rect x="227" y="196" width="56" height="34" rx="17" fill="#047857" fill-opacity=".12" stroke="#047857" stroke-opacity=".55"/>
+<text x="255" y="219" text-anchor="middle" class="chip">Gym</text>
+</svg>
