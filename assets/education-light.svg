@@ -1,0 +1,34 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="236" viewBox="0 0 1200 236" role="img" aria-labelledby="t d">
+  <title id="t">Education</title>
+  <desc id="d">PhD in Computer Science, Université Laval, Québec, Canada (2025 – present); Research Master&#x27;s in Intelligent Systems, ENSI, University of Manouba, Tunisia (2022 – 2023); Engineering Degree in Computer Science, AI, ENSI, University of Manouba, Tunisia (2020 – 2023)</desc>
+  <style>
+    .yr{font:600 17px ui-monospace,SFMono-Regular,Menlo,Consolas,monospace}
+    .deg{font:700 30px 'Segoe UI',Ubuntu,'Helvetica Neue',Arial,sans-serif;fill:#1F2328}
+    .fld{font:600 21px 'Segoe UI',Ubuntu,'Helvetica Neue',Arial,sans-serif}
+    .sch{font:400 19px 'Segoe UI',Ubuntu,'Helvetica Neue',Arial,sans-serif;fill:#59636E}
+  </style>
+<rect x="1" y="1" width="382" height="234" rx="16" fill="none" stroke="#D0D7DE" stroke-width="1.5"/>
+<rect x="29" y="0" width="64" height="4" rx="2" fill="#6D28D9"/>
+<path d="M311 44 L329 35 L347 44 L329 53 Z M319 48 V57 Q329 63 339 57 V48" fill="none" stroke="#6D28D9" stroke-width="2" stroke-linejoin="round"/>
+<text x="29" y="50" class="yr" fill="#6D28D9">2025 – present</text>
+<text x="29" y="100" class="deg">PhD</text>
+<text x="29" y="134" class="fld" fill="#6D28D9">Computer Science</text>
+<text x="29" y="178" class="sch">Université Laval</text>
+<text x="29" y="204" class="sch">Québec, Canada</text>
+<rect x="409" y="1" width="382" height="234" rx="16" fill="none" stroke="#D0D7DE" stroke-width="1.5"/>
+<rect x="437" y="0" width="64" height="4" rx="2" fill="#0E7490"/>
+<path d="M719 44 L737 35 L755 44 L737 53 Z M727 48 V57 Q737 63 747 57 V48" fill="none" stroke="#0E7490" stroke-width="2" stroke-linejoin="round"/>
+<text x="437" y="50" class="yr" fill="#0E7490">2022 – 2023</text>
+<text x="437" y="100" class="deg">Research Master&#x27;s</text>
+<text x="437" y="134" class="fld" fill="#0E7490">Intelligent Systems</text>
+<text x="437" y="178" class="sch">ENSI, University of Manouba</text>
+<text x="437" y="204" class="sch">Tunisia</text>
+<rect x="817" y="1" width="382" height="234" rx="16" fill="none" stroke="#D0D7DE" stroke-width="1.5"/>
+<rect x="845" y="0" width="64" height="4" rx="2" fill="#047857"/>
+<path d="M1127 44 L1145 35 L1163 44 L1145 53 Z M1135 48 V57 Q1145 63 1155 57 V48" fill="none" stroke="#047857" stroke-width="2" stroke-linejoin="round"/>
+<text x="845" y="50" class="yr" fill="#047857">2020 – 2023</text>
+<text x="845" y="100" class="deg">Engineering Degree</text>
+<text x="845" y="134" class="fld" fill="#047857">Computer Science, AI</text>
+<text x="845" y="178" class="sch">ENSI, University of Manouba</text>
+<text x="845" y="204" class="sch">Tunisia</text>
+</svg>

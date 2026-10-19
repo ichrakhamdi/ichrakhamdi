@@ -78,11 +78,13 @@ def hero():
       .flow{stroke:url(#accent);stroke-width:2;stroke-dasharray:6 10;animation:dash 2.4s linear infinite}
       .node{fill:#0F172A;stroke-width:2}
       .lbl{font:600 13px ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;fill:#CBD5E1}
-      .wave{animation:slide 6s linear infinite}
+      .alert{animation:alert 3s ease-in-out infinite}
       @keyframes dash{to{stroke-dashoffset:-32}}
-      @keyframes slide{to{transform:translateX(-240px)}}"""
+      @keyframes alert{0%,25%{opacity:0}35%,60%{opacity:1}75%,100%{opacity:0}}"""
     defs = """
-    <clipPath id="waveclip"><rect x="680" y="236" width="480" height="56" rx="10"/></clipPath>"""
+    <marker id="head" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M0 0L10 5L0 10z" fill="#64748B"/>
+    </marker>"""
     tags = ["Python", "SQL", "PyTorch", "TensorFlow", "Time series", "ETL"]
     tag_svg, tx = [], 66
     for t in tags:
@@ -140,18 +142,24 @@ def hero():
             f'<circle r="4" fill="{colors[i + 1]}"><animateMotion dur="1.6s" begin="{i * 0.5}s" repeatCount="indefinite"><mpath href="#l{i}"/></animateMotion></circle>'
         )
 
-    # Scrolling signal (time-series) under the pipeline
-    pts = []
-    import math
-    for k in range(0, 961, 6):
-        v = 264 + 10 * math.sin(k / 19) + 6 * math.sin(k / 7.3) * (1 if (k // 120) % 2 else 0.4)
-        pts.append(f"{680 + k},{v:.1f}")
-    wave = f"""
-  <rect x="680" y="236" width="480" height="56" rx="10" fill="#0F172A" stroke="#334155"/>
-  <g clip-path="url(#waveclip)">
-    <polyline class="wave" points="{' '.join(pts)}" fill="none" stroke="url(#accent)" stroke-width="2"/>
-  </g>
-  <text x="692" y="252" class="lbl" style="font-size:11px;fill:#64748B">signal</text>"""
+    # PhD research strip: an RL agent acting on an industrial CPS and learning from state + reward
+    rl = """
+  <rect x="680" y="216" width="480" height="92" rx="12" fill="#0F172A" stroke="#334155"/>
+  <text x="694" y="234" class="lbl" style="font-size:11px;fill:#64748B">PhD research</text>
+  <circle cx="752" cy="266" r="27" class="node" stroke="#A78BFA"/>
+  <text x="752" y="264" text-anchor="middle" class="lbl" style="fill:#C4B5FD">RL</text>
+  <text x="752" y="279" text-anchor="middle" class="lbl" style="font-size:10px">agent</text>
+  <rect x="1010" y="240" width="134" height="52" rx="10" class="node" stroke="#F472B6"/>
+  <path d="M1024 282 V262 L1033 268 V262 L1042 268 V262 L1051 268 V282 Z M1027 262 V250 H1033 V262" fill="none" stroke="#F472B6" stroke-width="2" stroke-linejoin="round"/>
+  <text x="1100" y="262" text-anchor="middle" class="lbl">industrial</text>
+  <text x="1100" y="280" text-anchor="middle" class="lbl">CPS</text>
+  <circle cx="1140" cy="244" r="6" fill="#F43F5E" class="alert"/>
+  <path id="act" d="M782 254 H1004" stroke="#334155" stroke-width="2" marker-end="url(#head)"/>
+  <path id="obs" d="M1004 280 H782" stroke="#334155" stroke-width="2" marker-end="url(#head)"/>
+  <text x="893" y="246" text-anchor="middle" class="lbl" style="font-size:11px;fill:#34D399">action</text>
+  <text x="893" y="300" text-anchor="middle" class="lbl" style="font-size:11px;fill:#22D3EE">state · reward</text>
+  <circle r="4" fill="#34D399"><animateMotion dur="2s" repeatCount="indefinite"><mpath href="#act"/></animateMotion></circle>
+  <circle r="4" fill="#22D3EE"><animateMotion dur="2s" begin="1s" repeatCount="indefinite"><mpath href="#obs"/></animateMotion></circle>"""
 
     body = f"""
   <text x="64" y="92" class="h1">Ichrak Hamdi</text>
@@ -165,10 +173,10 @@ def hero():
   {chr(10).join(links)}
   {chr(10).join(nodes)}
   {icons}
-  {wave}
-  </g>"""
+  </g>
+  {rl}"""
     return svg(W, H, "Ichrak Hamdi: Machine Learning Engineer and Data Scientist",
-               "Banner with name, title, PhD research areas (reinforcement learning, industrial cyber-physical systems), and an animated data pipeline from raw data through ETL and a model to evaluation, above a scrolling signal.",
+               "Banner with name, title, PhD research areas (reinforcement learning, industrial cyber-physical systems), and an animated data pipeline from raw data through ETL and a model to evaluation, above a reinforcement-learning loop where an agent acts on an industrial cyber-physical system and receives state and reward.",
                defs, css, body)
 
 
@@ -250,7 +258,7 @@ EXPERIENCE = [
     # (dates, role, org, description, accent)
     ("2025 – present", "PhD in Computer Science", "Université Laval · Québec",
      "Autonomous AI agents for the cyberdefense of industrial cyber-physical systems.", "violet"),
-    ("2025 – 2026", "Course Lecturer & Teaching Assistant", "Université Laval · Québec",
+    ("2025 – present", "Course Lecturer & Teaching Assistant", "Université Laval · Québec",
      "Taught 2 algorithms courses; TA for IoT Security and Advanced C++ (code review, grading).", "green"),
     ("2024", "Machine Learning Research Engineer", "Knowlepsy · Remote",
      "End-to-end ML pipelines for epilepsy health data: time series, signals, ETL on Azure.", "cyan"),
@@ -332,7 +340,43 @@ def project(t, title, kicker, accent, desc, tags, award):
     return plain_svg(W, H, title, f"{kicker}. {' '.join(desc)}", css, "\n".join(parts))
 
 
+# ---------------------------------------------------------------- education
+EDUCATION = [
+    # (years, degree, field, school, place, accent)
+    ("2025 – present", "PhD", "Computer Science", "Université Laval", "Québec, Canada", "violet"),
+    ("2022 – 2023", "Research Master's", "Intelligent Systems", "ENSI, University of Manouba", "Tunisia", "cyan"),
+    ("2020 – 2023", "Engineering Degree", "Computer Science, AI", "ENSI, University of Manouba", "Tunisia", "green"),
+]
+
+
+def education(t):
+    W, H, gap = 1200, 236, 24
+    cw = (W - 2 * gap) / 3
+    css = f"""
+    .yr{{font:600 17px {MONO}}}
+    .deg{{font:700 30px {SANS};fill:{t['text']}}}
+    .fld{{font:600 21px {SANS}}}
+    .sch{{font:400 19px {SANS};fill:{t['muted']}}}"""
+    parts = []
+    for i, (years, degree, field, school, place, accent) in enumerate(EDUCATION):
+        x, c = 1 + i * (cw + gap), t[accent]
+        parts.append(f'<rect x="{x:.0f}" y="1" width="{cw - 2:.0f}" height="{H - 2}" rx="16" fill="none" stroke="{t["line"]}" stroke-width="1.5"/>')
+        parts.append(f'<rect x="{x + 28:.0f}" y="0" width="64" height="4" rx="2" fill="{c}"/>')
+        # mortarboard
+        gx, gy = x + cw - 56, 44
+        parts.append(f'<path d="M{gx - 18:.0f} {gy} L{gx:.0f} {gy - 9} L{gx + 18:.0f} {gy} L{gx:.0f} {gy + 9} Z M{gx - 10:.0f} {gy + 4} V{gy + 13} Q{gx:.0f} {gy + 19} {gx + 10:.0f} {gy + 13} V{gy + 4}" '
+                     f'fill="none" stroke="{c}" stroke-width="2" stroke-linejoin="round"/>')
+        parts.append(f'<text x="{x + 28:.0f}" y="50" class="yr" fill="{c}">{escape(years)}</text>')
+        parts.append(f'<text x="{x + 28:.0f}" y="100" class="deg">{escape(degree)}</text>')
+        parts.append(f'<text x="{x + 28:.0f}" y="134" class="fld" fill="{c}">{escape(field)}</text>')
+        parts.append(f'<text x="{x + 28:.0f}" y="178" class="sch">{escape(school)}</text>')
+        parts.append(f'<text x="{x + 28:.0f}" y="204" class="sch">{escape(place)}</text>')
+    return plain_svg(W, H, "Education",
+                     "; ".join(f"{d} in {f}, {s}, {p} ({y})" for y, d, f, s, p, _ in EDUCATION), css, "\n".join(parts))
+
+
 (OUT / "hero.svg").write_text(hero())
+write_themed("education", education)
 write_themed("stack", stack)
 write_themed("experience", experience)
 for name, args in PROJECTS.items():

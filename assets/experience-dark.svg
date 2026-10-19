@@ -1,6 +1,6 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="1200" height="586" viewBox="0 0 1200 586" role="img" aria-labelledby="t d">
   <title id="t">Experience</title>
-  <desc id="d">2025 – present: PhD in Computer Science, Université Laval · Québec. Autonomous AI agents for the cyberdefense of industrial cyber-physical systems.; 2025 – 2026: Course Lecturer &amp; Teaching Assistant, Université Laval · Québec. Taught 2 algorithms courses; TA for IoT Security and Advanced C++ (code review, grading).; 2024: Machine Learning Research Engineer, Knowlepsy · Remote. End-to-end ML pipelines for epilepsy health data: time series, signals, ETL on Azure.; 2023: AI Research Intern, UQAT · Rouyn-Noranda. Optimization algorithms for planning sidewalk snow-removal operations.; 2022: AI Intern, Talan Tunisie · Tunis. Distributed architectures for a metaverse project and motion detection algorithms.</desc>
+  <desc id="d">2025 – present: PhD in Computer Science, Université Laval · Québec. Autonomous AI agents for the cyberdefense of industrial cyber-physical systems.; 2025 – present: Course Lecturer &amp; Teaching Assistant, Université Laval · Québec. Taught 2 algorithms courses; TA for IoT Security and Advanced C++ (code review, grading).; 2024: Machine Learning Research Engineer, Knowlepsy · Remote. End-to-end ML pipelines for epilepsy health data: time series, signals, ETL on Azure.; 2023: AI Research Intern, UQAT · Rouyn-Noranda. Optimization algorithms for planning sidewalk snow-removal operations.; 2022: AI Intern, Talan Tunisie · Tunis. Distributed architectures for a metaverse project and motion detection algorithms.</desc>
   <style>
     .date{font:600 18px ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;fill:#9198A1}
     .role{font:700 24px 'Segoe UI',Ubuntu,'Helvetica Neue',Arial,sans-serif;fill:#E6EDF3}
@@ -14,7 +14,7 @@
 <text x="268" y="36" class="role">PhD in Computer Science</text>
 <text x="268" y="64" class="org" fill="#A78BFA">Université Laval · Québec</text>
 <text x="268" y="92" class="desc">Autonomous AI agents for the cyberdefense of industrial cyber-physical systems.</text>
-<text x="208" y="152" text-anchor="end" class="date">2025 – 2026</text>
+<text x="208" y="152" text-anchor="end" class="date">2025 – present</text>
 <circle cx="236" cy="145" r="8" fill="#34D399"/>
 <text x="268" y="154" class="role">Course Lecturer &amp; Teaching Assistant</text>
 <text x="268" y="182" class="org" fill="#34D399">Université Laval · Québec</text>

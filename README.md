@@ -16,7 +16,6 @@ I'm a machine learning engineer and data scientist. I build Python data pipeline
 - **Now:** PhD research on reinforcement learning for the cyberdefense of industrial cyber-physical systems
 - **Before:** Machine Learning Research Engineer at Knowlepsy, building ML pipelines for epilepsy health data
 - **Teaching:** course lecturer and TA at Université Laval, reviewing, debugging and grading code in 5 courses
-- **Looking for:** machine learning engineering, data science and code/model evaluation roles
 
 ## Tech Stack
 
@@ -31,7 +30,7 @@ I'm a machine learning engineer and data scientist. I build Python data pipeline
 
 <picture>
   <source media="(prefers-color-scheme: dark)" srcset="./assets/experience-dark.svg" />
-  <img src="./assets/experience-light.svg" alt="2025 to present: PhD in Computer Science, Université Laval. 2025 to 2026: Course Lecturer and Teaching Assistant, Université Laval. 2024: Machine Learning Research Engineer, Knowlepsy. 2023: AI Research Intern, UQAT. 2022: AI Intern, Talan Tunisie." width="100%" />
+  <img src="./assets/experience-light.svg" alt="2025 to present: PhD in Computer Science, Université Laval. 2025 to present: Course Lecturer and Teaching Assistant, Université Laval. 2024: Machine Learning Research Engineer, Knowlepsy. 2023: AI Research Intern, UQAT. 2022: AI Intern, Talan Tunisie." width="100%" />
 </picture>
 
 ## Featured Projects
@@ -60,11 +59,10 @@ I'm a machine learning engineer and data scientist. I build Python data pipeline
 
 ## Education
 
-| Degree | School | Years |
-| --- | --- | --- |
-| **PhD, Computer Science** | Université Laval, Canada | 2025 – present |
-| **Research Master's, Intelligent Systems** | ENSI, University of Manouba, Tunisia | 2022 – 2023 |
-| **Engineering Degree, Computer Science (AI)** | ENSI, University of Manouba, Tunisia | 2020 – 2023 |
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="./assets/education-dark.svg" />
+  <img src="./assets/education-light.svg" alt="PhD in Computer Science, Université Laval, Québec, Canada (2025 to present). Research Master's in Intelligent Systems, ENSI, University of Manouba, Tunisia (2022 to 2023). Engineering Degree in Computer Science, AI, ENSI, University of Manouba, Tunisia (2020 to 2023)." width="100%" />
+</picture>
 
 ## Awards & Recognition
 
