@@ -1,0 +1,102 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="528" viewBox="0 0 1200 528" role="img" aria-labelledby="t d">
+  <title id="t">What I do</title>
+  <desc id="d">Six expertise cards: ML engineering, time series and signals, deep learning and vision, data engineering, code review and evaluation, and AI for cybersecurity.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#0B1020"/>
+      <stop offset="0.55" stop-color="#121A33"/>
+      <stop offset="1" stop-color="#1B1240"/>
+    </linearGradient>
+    <linearGradient id="accent" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#22D3EE"/>
+      <stop offset="1" stop-color="#A78BFA"/>
+    </linearGradient>
+    <pattern id="grid" width="32" height="32" patternUnits="userSpaceOnUse">
+      <path d="M32 0H0V32" fill="none" stroke="#FFFFFF" stroke-opacity="0.04"/>
+    </pattern>
+    <style>
+      .h1{font:700 52px 'Segoe UI',Ubuntu,'Helvetica Neue',Arial,sans-serif;fill:#F8FAFC}
+      .h2{font:600 22px 'Segoe UI',Ubuntu,'Helvetica Neue',Arial,sans-serif;fill:url(#accent)}
+      .h3{font:500 17px 'Segoe UI',Ubuntu,'Helvetica Neue',Arial,sans-serif;fill:#CBD5E1}
+      .title{font:700 19px 'Segoe UI',Ubuntu,'Helvetica Neue',Arial,sans-serif;fill:#F8FAFC}
+      .org{font:600 14px 'Segoe UI',Ubuntu,'Helvetica Neue',Arial,sans-serif;fill:#CBD5E1}
+      .body{font:400 14px 'Segoe UI',Ubuntu,'Helvetica Neue',Arial,sans-serif;fill:#94A3B8}
+      .small{font:400 13px 'Segoe UI',Ubuntu,'Helvetica Neue',Arial,sans-serif;fill:#94A3B8}
+      .mono{font:600 12px ui-monospace,SFMono-Regular,Menlo,Consolas,monospace}
+      .chip{font:600 12px ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;fill:#E2E8F0}
+      .card{fill:#0F172A;stroke:#1E293B;stroke-width:1.5}
+      .glow{animation:glow 6s ease-in-out infinite}
+      @keyframes glow{0%,100%{opacity:.35}50%{opacity:1}}
+    </style>
+  </defs>
+  <rect width="1200" height="528" rx="18" fill="url(#bg)"/>
+  <rect width="1200" height="528" rx="18" fill="url(#grid)"/>
+<rect x="20" y="20" width="376" height="236" rx="16" class="card"/>
+<rect x="44" y="20" width="328" height="3" rx="1.5" fill="#22D3EE" class="glow" style="animation-delay:0s"/>
+<circle cx="66" cy="70" r="24" fill="#22D3EE" fill-opacity="0.12" stroke="#22D3EE" stroke-opacity="0.4"/>
+<circle cx="54" cy="70" r="5" stroke="#22D3EE" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/><circle cx="78" cy="61" r="5" stroke="#22D3EE" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/><circle cx="78" cy="79" r="5" stroke="#22D3EE" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/><path d="M59 68 L73 62 M59 72 L73 78" stroke="#22D3EE" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+<text x="104" y="77" class="title">ML Engineering</text>
+<text x="44" y="124" class="body">End-to-end Python pipelines on real-world,</text>
+<text x="44" y="145" class="body">noisy data: ingestion, preprocessing,</text>
+<text x="44" y="166" class="body">training and evaluation.</text>
+<rect x="44" y="210" width="64" height="26" rx="13" fill="#22D3EE" fill-opacity="0.12" stroke="#22D3EE" stroke-opacity="0.45"/><text x="76" y="227" text-anchor="middle" class="chip">Python</text>
+<rect x="116" y="210" width="64" height="26" rx="13" fill="#22D3EE" fill-opacity="0.12" stroke="#22D3EE" stroke-opacity="0.45"/><text x="148" y="227" text-anchor="middle" class="chip">Pandas</text>
+<rect x="188" y="210" width="57" height="26" rx="13" fill="#22D3EE" fill-opacity="0.12" stroke="#22D3EE" stroke-opacity="0.45"/><text x="216" y="227" text-anchor="middle" class="chip">NumPy</text>
+<rect x="253" y="210" width="106" height="26" rx="13" fill="#22D3EE" fill-opacity="0.12" stroke="#22D3EE" stroke-opacity="0.45"/><text x="306" y="227" text-anchor="middle" class="chip">scikit-learn</text>
+<rect x="412" y="20" width="376" height="236" rx="16" class="card"/>
+<rect x="436" y="20" width="328" height="3" rx="1.5" fill="#A78BFA" class="glow" style="animation-delay:1s"/>
+<circle cx="458" cy="70" r="24" fill="#A78BFA" fill-opacity="0.12" stroke="#A78BFA" stroke-opacity="0.4"/>
+<path d="M442 70 Q448 56 454 70 T466 70 T476 64" stroke="#A78BFA" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+<text x="496" y="77" class="title">Time Series &amp; Signals</text>
+<text x="436" y="124" class="body">Forecasting and signal processing on large</text>
+<text x="436" y="145" class="body">health datasets, including epilepsy data</text>
+<text x="436" y="166" class="body">from IoT sensors.</text>
+<rect x="436" y="210" width="99" height="26" rx="13" fill="#A78BFA" fill-opacity="0.12" stroke="#A78BFA" stroke-opacity="0.45"/><text x="486" y="227" text-anchor="middle" class="chip">Forecasting</text>
+<rect x="543" y="210" width="141" height="26" rx="13" fill="#A78BFA" fill-opacity="0.12" stroke="#A78BFA" stroke-opacity="0.45"/><text x="614" y="227" text-anchor="middle" class="chip">Signal processing</text>
+<rect x="692" y="210" width="43" height="26" rx="13" fill="#A78BFA" fill-opacity="0.12" stroke="#A78BFA" stroke-opacity="0.45"/><text x="714" y="227" text-anchor="middle" class="chip">IoT</text>
+<rect x="804" y="20" width="376" height="236" rx="16" class="card"/>
+<rect x="828" y="20" width="328" height="3" rx="1.5" fill="#F472B6" class="glow" style="animation-delay:2s"/>
+<circle cx="850" cy="70" r="24" fill="#F472B6" fill-opacity="0.12" stroke="#F472B6" stroke-opacity="0.4"/>
+<path d="M833 70 Q850 55 867 70 Q850 85 833 70 Z" stroke="#F472B6" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/><circle cx="850" cy="70" r="5" stroke="#F472B6" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+<text x="888" y="77" class="title">Deep Learning &amp; Vision</text>
+<text x="828" y="124" class="body">CNNs, U-Net, LSTMs and Transformers for</text>
+<text x="828" y="145" class="body">segmentation, emotion recognition and</text>
+<text x="828" y="166" class="body">network-traffic classification.</text>
+<rect x="828" y="210" width="71" height="26" rx="13" fill="#F472B6" fill-opacity="0.12" stroke="#F472B6" stroke-opacity="0.45"/><text x="864" y="227" text-anchor="middle" class="chip">PyTorch</text>
+<rect x="907" y="210" width="92" height="26" rx="13" fill="#F472B6" fill-opacity="0.12" stroke="#F472B6" stroke-opacity="0.45"/><text x="953" y="227" text-anchor="middle" class="chip">TensorFlow</text>
+<rect x="1007" y="210" width="64" height="26" rx="13" fill="#F472B6" fill-opacity="0.12" stroke="#F472B6" stroke-opacity="0.45"/><text x="1039" y="227" text-anchor="middle" class="chip">OpenCV</text>
+<rect x="20" y="272" width="376" height="236" rx="16" class="card"/>
+<rect x="44" y="272" width="328" height="3" rx="1.5" fill="#FBBF24" class="glow" style="animation-delay:3s"/>
+<circle cx="66" cy="322" r="24" fill="#FBBF24" fill-opacity="0.12" stroke="#FBBF24" stroke-opacity="0.4"/>
+<ellipse cx="66" cy="313" rx="13" ry="5" stroke="#FBBF24" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/><path d="M53 313 V331 A13 5 0 0 0 79 331 V313 M53 322 A13 5 0 0 0 79 322" stroke="#FBBF24" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+<text x="104" y="329" class="title">Data Engineering</text>
+<text x="44" y="376" class="body">ETL workflows and data integration in the</text>
+<text x="44" y="397" class="body">cloud, from SQL databases to streaming</text>
+<text x="44" y="418" class="body">and big-data tools.</text>
+<rect x="44" y="462" width="43" height="26" rx="13" fill="#FBBF24" fill-opacity="0.12" stroke="#FBBF24" stroke-opacity="0.45"/><text x="66" y="479" text-anchor="middle" class="chip">SQL</text>
+<rect x="95" y="462" width="57" height="26" rx="13" fill="#FBBF24" fill-opacity="0.12" stroke="#FBBF24" stroke-opacity="0.45"/><text x="124" y="479" text-anchor="middle" class="chip">Azure</text>
+<rect x="160" y="462" width="57" height="26" rx="13" fill="#FBBF24" fill-opacity="0.12" stroke="#FBBF24" stroke-opacity="0.45"/><text x="188" y="479" text-anchor="middle" class="chip">Kafka</text>
+<rect x="225" y="462" width="64" height="26" rx="13" fill="#FBBF24" fill-opacity="0.12" stroke="#FBBF24" stroke-opacity="0.45"/><text x="257" y="479" text-anchor="middle" class="chip">Hadoop</text>
+<rect x="297" y="462" width="64" height="26" rx="13" fill="#FBBF24" fill-opacity="0.12" stroke="#FBBF24" stroke-opacity="0.45"/><text x="329" y="479" text-anchor="middle" class="chip">Docker</text>
+<rect x="412" y="272" width="376" height="236" rx="16" class="card"/>
+<rect x="436" y="272" width="328" height="3" rx="1.5" fill="#34D399" class="glow" style="animation-delay:4s"/>
+<circle cx="458" cy="322" r="24" fill="#34D399" fill-opacity="0.12" stroke="#34D399" stroke-opacity="0.4"/>
+<path d="M450 313 L441 322 L450 331 M466 313 L475 322 L466 331 M461 310 L455 334" stroke="#34D399" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+<text x="496" y="329" class="title">Code Review &amp; Evaluation</text>
+<text x="436" y="376" class="body">Reviewing, debugging and grading code in</text>
+<text x="436" y="397" class="body">5 university courses. Evaluating AI agent</text>
+<text x="436" y="418" class="body">behavior and model outputs.</text>
+<rect x="436" y="462" width="85" height="26" rx="13" fill="#34D399" fill-opacity="0.12" stroke="#34D399" stroke-opacity="0.45"/><text x="478" y="479" text-anchor="middle" class="chip">Debugging</text>
+<rect x="529" y="462" width="78" height="26" rx="13" fill="#34D399" fill-opacity="0.12" stroke="#34D399" stroke-opacity="0.45"/><text x="568" y="479" text-anchor="middle" class="chip">Feedback</text>
+<rect x="615" y="462" width="134" height="26" rx="13" fill="#34D399" fill-opacity="0.12" stroke="#34D399" stroke-opacity="0.45"/><text x="682" y="479" text-anchor="middle" class="chip">Agent evaluation</text>
+<rect x="804" y="272" width="376" height="236" rx="16" class="card"/>
+<rect x="828" y="272" width="328" height="3" rx="1.5" fill="#60A5FA" class="glow" style="animation-delay:5s"/>
+<circle cx="850" cy="322" r="24" fill="#60A5FA" fill-opacity="0.12" stroke="#60A5FA" stroke-opacity="0.4"/>
+<path d="M850 307 L863 313 V323 Q863 333 850 338 Q837 333 837 323 V313 Z" stroke="#60A5FA" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/><path d="M845 323 L849 327 L856 318" stroke="#60A5FA" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+<text x="888" y="329" class="title">AI for Cybersecurity</text>
+<text x="828" y="376" class="body">PhD research on autonomous AI agents for</text>
+<text x="828" y="397" class="body">the cyberdefense of industrial</text>
+<text x="828" y="418" class="body">cyber-physical systems.</text>
+<rect x="828" y="462" width="176" height="26" rx="13" fill="#60A5FA" fill-opacity="0.12" stroke="#60A5FA" stroke-opacity="0.45"/><text x="916" y="479" text-anchor="middle" class="chip">Reinforcement learning</text>
+<rect x="1012" y="462" width="78" height="26" rx="13" fill="#60A5FA" fill-opacity="0.12" stroke="#60A5FA" stroke-opacity="0.45"/><text x="1051" y="479" text-anchor="middle" class="chip">ICS / OT</text>
+</svg>

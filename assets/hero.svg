@@ -1,6 +1,6 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="1200" height="320" viewBox="0 0 1200 320" role="img" aria-labelledby="t d">
-  <title id="t">Ichrak Hamdi: PhD Researcher in Computer Science</title>
-  <desc id="d">Banner with name, title and an animated network being protected by a learning agent.</desc>
+  <title id="t">Ichrak Hamdi: Machine Learning Engineer and Data Scientist</title>
+  <desc id="d">Banner with name and title, and an animated data pipeline from raw data through ETL and a model to evaluation, above a scrolling signal.</desc>
   <defs>
     <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
       <stop offset="0" stop-color="#0B1020"/>
@@ -11,81 +11,93 @@
       <stop offset="0" stop-color="#22D3EE"/>
       <stop offset="1" stop-color="#A78BFA"/>
     </linearGradient>
-    <radialGradient id="glow" cx="0.5" cy="0.5" r="0.5">
-      <stop offset="0" stop-color="#22D3EE" stop-opacity="0.35"/>
-      <stop offset="1" stop-color="#22D3EE" stop-opacity="0"/>
-    </radialGradient>
     <pattern id="grid" width="32" height="32" patternUnits="userSpaceOnUse">
       <path d="M32 0H0V32" fill="none" stroke="#FFFFFF" stroke-opacity="0.04"/>
     </pattern>
+    <clipPath id="waveclip"><rect x="680" y="236" width="480" height="56" rx="10"/></clipPath>
     <style>
-      .name{font:700 52px 'Segoe UI',Ubuntu,'Helvetica Neue',Arial,sans-serif;fill:#F8FAFC}
-      .role{font:600 22px 'Segoe UI',Ubuntu,'Helvetica Neue',Arial,sans-serif;fill:url(#accent)}
-      .sub{font:400 17px 'Segoe UI',Ubuntu,'Helvetica Neue',Arial,sans-serif;fill:#94A3B8}
-      .tag{font:600 13px ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;fill:#CBD5E1}
-      .edge{stroke:#334155;stroke-width:1.5}
+      .h1{font:700 52px 'Segoe UI',Ubuntu,'Helvetica Neue',Arial,sans-serif;fill:#F8FAFC}
+      .h2{font:600 22px 'Segoe UI',Ubuntu,'Helvetica Neue',Arial,sans-serif;fill:url(#accent)}
+      .h3{font:500 17px 'Segoe UI',Ubuntu,'Helvetica Neue',Arial,sans-serif;fill:#CBD5E1}
+      .title{font:700 19px 'Segoe UI',Ubuntu,'Helvetica Neue',Arial,sans-serif;fill:#F8FAFC}
+      .org{font:600 14px 'Segoe UI',Ubuntu,'Helvetica Neue',Arial,sans-serif;fill:#CBD5E1}
+      .body{font:400 14px 'Segoe UI',Ubuntu,'Helvetica Neue',Arial,sans-serif;fill:#94A3B8}
+      .small{font:400 13px 'Segoe UI',Ubuntu,'Helvetica Neue',Arial,sans-serif;fill:#94A3B8}
+      .mono{font:600 12px ui-monospace,SFMono-Regular,Menlo,Consolas,monospace}
+      .chip{font:600 12px ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;fill:#E2E8F0}
       .flow{stroke:url(#accent);stroke-width:2;stroke-dasharray:6 10;animation:dash 2.4s linear infinite}
-      .node{fill:#0F172A;stroke:#22D3EE;stroke-width:2}
-      .plc{fill:#0F172A;stroke:#A78BFA;stroke-width:2}
-      .threat{fill:#F43F5E;animation:blink 3s ease-in-out infinite}
-      .shield{fill:none;stroke:#34D399;stroke-width:2.5;opacity:0;animation:shield 3s ease-in-out infinite}
-      .pulse{fill:url(#glow);transform-origin:900px 160px;animation:pulse 3s ease-in-out infinite}
-      .cursor{fill:#22D3EE;animation:caret 1s steps(1) infinite}
+      .node{fill:#0F172A;stroke-width:2}
+      .lbl{font:600 13px ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;fill:#CBD5E1}
+      .wave{animation:slide 6s linear infinite}
       @keyframes dash{to{stroke-dashoffset:-32}}
-      @keyframes blink{0%,30%{opacity:0}35%,55%{opacity:1}60%,100%{opacity:0}}
-      @keyframes shield{0%,50%{opacity:0}58%,85%{opacity:1}100%{opacity:0}}
-      @keyframes pulse{0%,100%{transform:scale(.85);opacity:.6}50%{transform:scale(1.1);opacity:1}}
-      @keyframes caret{50%{opacity:0}}
+      @keyframes slide{to{transform:translateX(-240px)}}
     </style>
   </defs>
-
   <rect width="1200" height="320" rx="18" fill="url(#bg)"/>
   <rect width="1200" height="320" rx="18" fill="url(#grid)"/>
 
-  <!-- Text -->
-  <text x="64" y="112" class="name">Ichrak Hamdi</text>
-  <text x="66" y="152" class="role">PhD Researcher · Computer Science · Université Laval</text>
-  <text x="66" y="192" class="sub">Reinforcement learning for autonomous, safety-aware</text>
-  <text x="66" y="216" class="sub">cyberattack response in industrial cyber-physical systems.</text>
-  <g transform="translate(66 252)">
-    <rect width="72" height="28" rx="14" fill="#1E293B" stroke="#334155"/>
-    <text x="36" y="19" text-anchor="middle" class="tag">RL</text>
-    <rect x="82" width="104" height="28" rx="14" fill="#1E293B" stroke="#334155"/>
-    <text x="134" y="19" text-anchor="middle" class="tag">ICS / OT</text>
-    <rect x="196" width="80" height="28" rx="14" fill="#1E293B" stroke="#334155"/>
-    <text x="236" y="19" text-anchor="middle" class="tag">CPS</text>
-    <rect x="286" width="150" height="28" rx="14" fill="#1E293B" stroke="#334155"/>
-    <text x="361" y="19" text-anchor="middle" class="tag">Deep Learning</text>
+  <text x="64" y="104" class="h1">Ichrak Hamdi</text>
+  <text x="66" y="146" class="h2">Machine Learning Engineer · Data Scientist</text>
+  <text x="66" y="178" class="h3">PhD Researcher in Computer Science, Université Laval</text>
+  <text x="66" y="212" class="body" style="font-size:16px">End-to-end Python ML pipelines for real-world data:</text>
+  <text x="66" y="234" class="body" style="font-size:16px">ETL, time series, signal processing and deep learning.</text>
+  <rect x="66" y="252" width="73" height="28" rx="14" fill="#1E293B" stroke="#334155"/><text x="102" y="271" text-anchor="middle" class="lbl">Python</text>
+<rect x="149" y="252" width="49" height="28" rx="14" fill="#1E293B" stroke="#334155"/><text x="174" y="271" text-anchor="middle" class="lbl">SQL</text>
+<rect x="208" y="252" width="81" height="28" rx="14" fill="#1E293B" stroke="#334155"/><text x="248" y="271" text-anchor="middle" class="lbl">PyTorch</text>
+<rect x="299" y="252" width="104" height="28" rx="14" fill="#1E293B" stroke="#334155"/><text x="351" y="271" text-anchor="middle" class="lbl">TensorFlow</text>
+<rect x="413" y="252" width="112" height="28" rx="14" fill="#1E293B" stroke="#334155"/><text x="469" y="271" text-anchor="middle" class="lbl">Time series</text>
+<rect x="535" y="252" width="49" height="28" rx="14" fill="#1E293B" stroke="#334155"/><text x="559" y="271" text-anchor="middle" class="lbl">ETL</text>
+  <line x1="776" y1="130" x2="808" y2="130" stroke="#334155" stroke-width="2"/>
+<line x1="776" y1="130" x2="808" y2="130" class="flow"/>
+<path id="l0" d="M776 130 H808" fill="none"/>
+<circle r="4" fill="#38BDF8"><animateMotion dur="1.6s" begin="0.0s" repeatCount="indefinite"><mpath href="#l0"/></animateMotion></circle>
+<line x1="904" y1="130" x2="936" y2="130" stroke="#334155" stroke-width="2"/>
+<line x1="904" y1="130" x2="936" y2="130" class="flow"/>
+<path id="l1" d="M904 130 H936" fill="none"/>
+<circle r="4" fill="#A78BFA"><animateMotion dur="1.6s" begin="0.5s" repeatCount="indefinite"><mpath href="#l1"/></animateMotion></circle>
+<line x1="1032" y1="130" x2="1064" y2="130" stroke="#334155" stroke-width="2"/>
+<line x1="1032" y1="130" x2="1064" y2="130" class="flow"/>
+<path id="l2" d="M1032 130 H1064" fill="none"/>
+<circle r="4" fill="#34D399"><animateMotion dur="1.6s" begin="1.0s" repeatCount="indefinite"><mpath href="#l2"/></animateMotion></circle>
+  <rect x="680" y="70" width="96" height="120" rx="14" class="node" stroke="#22D3EE"/>
+<text x="728.0" y="174" text-anchor="middle" class="lbl">data</text>
+<rect x="808" y="70" width="96" height="120" rx="14" class="node" stroke="#38BDF8"/>
+<text x="856.0" y="174" text-anchor="middle" class="lbl">ETL</text>
+<rect x="936" y="70" width="96" height="120" rx="14" class="node" stroke="#A78BFA"/>
+<text x="984.0" y="174" text-anchor="middle" class="lbl">model</text>
+<rect x="1064" y="70" width="96" height="120" rx="14" class="node" stroke="#34D399"/>
+<text x="1112.0" y="174" text-anchor="middle" class="lbl">eval</text>
+  
+  <!-- data: cylinder -->
+  <ellipse cx="728.0" cy="102" rx="24" ry="8" fill="none" stroke="#22D3EE" stroke-width="2"/>
+  <path d="M704.0 102 V136 A24 8 0 0 0 752.0 136 V102" fill="none" stroke="#22D3EE" stroke-width="2"/>
+  <path d="M704.0 119 A24 8 0 0 0 752.0 119" fill="none" stroke="#22D3EE" stroke-width="2" stroke-opacity=".6"/>
+  <!-- ETL: funnel -->
+  <path d="M830.0 96 H882.0 L864.0 120 V140 L848.0 148 V120 Z" fill="none" stroke="#38BDF8" stroke-width="2" stroke-linejoin="round"/>
+  <!-- model: tiny network -->
+  <line x1="962.0" y1="98" x2="984.0" y2="106" stroke="#A78BFA" stroke-opacity=".5"/><line x1="962.0" y1="98" x2="984.0" y2="134" stroke="#A78BFA" stroke-opacity=".5"/><line x1="962.0" y1="120" x2="984.0" y2="106" stroke="#A78BFA" stroke-opacity=".5"/><line x1="962.0" y1="120" x2="984.0" y2="134" stroke="#A78BFA" stroke-opacity=".5"/><line x1="962.0" y1="142" x2="984.0" y2="106" stroke="#A78BFA" stroke-opacity=".5"/><line x1="962.0" y1="142" x2="984.0" y2="134" stroke="#A78BFA" stroke-opacity=".5"/>
+  <line x1="984.0" y1="106" x2="1006.0" y2="120" stroke="#A78BFA" stroke-opacity=".5"/><line x1="984.0" y1="134" x2="1006.0" y2="120" stroke="#A78BFA" stroke-opacity=".5"/>
+  <circle cx="962.0" cy="98" r="5" fill="#0F172A" stroke="#A78BFA" stroke-width="2"/><circle cx="962.0" cy="120" r="5" fill="#0F172A" stroke="#A78BFA" stroke-width="2"/><circle cx="962.0" cy="142" r="5" fill="#0F172A" stroke="#A78BFA" stroke-width="2"/>
+  <circle cx="984.0" cy="106" r="5" fill="#0F172A" stroke="#A78BFA" stroke-width="2"/><circle cx="984.0" cy="134" r="5" fill="#0F172A" stroke="#A78BFA" stroke-width="2"/>
+  <circle cx="1006.0" cy="120" r="5" fill="#A78BFA"/>
+  <!-- eval: animated bars -->
+  <rect x="1086.0" y="132" width="10" height="18" rx="2" fill="#34D399" fill-opacity="0.55">
+    <animate attributeName="height" values="18;30;18" dur="3s" begin="0.0s" repeatCount="indefinite"/>
+    <animate attributeName="y" values="132;120;132" dur="3s" begin="0.0s" repeatCount="indefinite"/>
+  </rect><rect x="1100.0" y="120" width="10" height="30" rx="2" fill="#34D399" fill-opacity="0.7000000000000001">
+    <animate attributeName="height" values="30;22;30" dur="3s" begin="0.4s" repeatCount="indefinite"/>
+    <animate attributeName="y" values="120;128;120" dur="3s" begin="0.4s" repeatCount="indefinite"/>
+  </rect><rect x="1114.0" y="124" width="10" height="26" rx="2" fill="#34D399" fill-opacity="0.8500000000000001">
+    <animate attributeName="height" values="26;44;26" dur="3s" begin="0.8s" repeatCount="indefinite"/>
+    <animate attributeName="y" values="124;106;124" dur="3s" begin="0.8s" repeatCount="indefinite"/>
+  </rect><rect x="1128.0" y="110" width="10" height="40" rx="2" fill="#34D399" fill-opacity="1.0">
+    <animate attributeName="height" values="40;50;40" dur="3s" begin="1.2000000000000002s" repeatCount="indefinite"/>
+    <animate attributeName="y" values="110;100;110" dur="3s" begin="1.2000000000000002s" repeatCount="indefinite"/>
+  </rect>
+  
+  <rect x="680" y="236" width="480" height="56" rx="10" fill="#0F172A" stroke="#334155"/>
+  <g clip-path="url(#waveclip)">
+    <polyline class="wave" points="680,264.0 686,268.9 692,272.3 698,273.6 704,273.2 710,272.0 716,271.1 722,270.8 728,270.5 734,269.1 740,266.1 746,261.6 752,256.9 758,253.5 764,252.3 770,253.4 776,255.9 782,258.4 788,260.3 794,261.4 800,260.3 806,261.4 812,266.0 818,272.6 824,278.2 830,279.9 836,276.9 842,270.6 848,264.4 854,260.9 860,260.8 866,262.5 872,263.2 878,261.1 884,256.3 890,251.2 896,248.9 902,251.2 908,257.5 914,265.1 920,267.0 926,269.5 932,270.5 938,270.8 944,271.3 950,272.4 956,273.5 962,273.5 968,271.6 974,267.6 980,262.6 986,258.0 992,255.2 998,254.5 1004,255.2 1010,256.3 1016,256.9 1022,257.1 1028,257.7 1034,259.5 1040,260.1 1046,267.3 1052,274.5 1058,278.6 1064,278.1 1070,273.8 1076,268.7 1082,265.4 1088,265.3 1094,267.0 1100,267.9 1106,265.7 1112,260.2 1118,253.4 1124,248.8 1130,248.5 1136,252.8 1142,259.4 1148,264.9 1154,267.3 1160,265.8 1166,267.0 1172,268.5 1178,270.9 1184,273.7 1190,275.5 1196,275.4 1202,272.8 1208,268.5 1214,263.8 1220,260.2 1226,258.2 1232,257.5 1238,257.2 1244,256.4 1250,255.2 1256,254.2 1262,254.7 1268,257.3 1274,261.7 1280,268.6 1286,274.4 1292,276.1 1298,273.9 1304,270.2 1310,267.9 1316,268.4 1322,270.8 1328,272.7 1334,271.4 1340,266.1 1346,258.5 1352,251.9 1358,249.1 1364,251.0 1370,255.8 1376,260.6 1382,262.8 1388,262.1 1394,260.4 1400,263.7 1406,266.8 1412,270.8 1418,274.4 1424,276.3 1430,275.7 1436,272.9 1442,269.1 1448,265.7 1454,263.3 1460,262.0 1466,260.8 1472,258.9 1478,256.3 1484,253.6 1490,252.2 1496,253.1 1502,256.3 1508,260.8 1514,265.3 1520,271.8 1526,271.2 1532,268.8 1538,267.5 1544,268.8 1550,272.5 1556,276.0 1562,276.4 1568,272.4 1574,265.0 1580,257.4 1586,252.7 1592,252.3 1598,255.2 1604,258.8 1610,260.2 1616,258.9 1622,256.3 1628,255.1 1634,257.7 1640,265.6" fill="none" stroke="url(#accent)" stroke-width="2"/>
   </g>
-
-  <!-- Network: agent in the middle defending industrial nodes -->
-  <circle cx="900" cy="160" r="90" class="pulse"/>
-  <g>
-    <line x1="900" y1="160" x2="780" y2="80" class="edge"/>
-    <line x1="900" y1="160" x2="1030" y2="78" class="edge"/>
-    <line x1="900" y1="160" x2="770" y2="240" class="edge"/>
-    <line x1="900" y1="160" x2="1040" y2="246" class="edge"/>
-    <line x1="780" y1="80" x2="770" y2="240" class="edge"/>
-    <line x1="1030" y1="78" x2="1040" y2="246" class="edge"/>
-    <line x1="900" y1="160" x2="780" y2="80" class="flow"/>
-    <line x1="900" y1="160" x2="1040" y2="246" class="flow"/>
-    <line x1="900" y1="160" x2="770" y2="240" class="flow"/>
-    <line x1="900" y1="160" x2="1030" y2="78" class="flow"/>
-  </g>
-  <!-- Industrial nodes -->
-  <rect x="760" y="62" width="40" height="36" rx="6" class="plc"/>
-  <text x="780" y="85" text-anchor="middle" class="tag" style="font-size:11px">PLC</text>
-  <rect x="1010" y="60" width="40" height="36" rx="6" class="plc"/>
-  <text x="1030" y="83" text-anchor="middle" class="tag" style="font-size:11px">HMI</text>
-  <rect x="750" y="222" width="40" height="36" rx="6" class="plc"/>
-  <text x="770" y="245" text-anchor="middle" class="tag" style="font-size:11px">RTU</text>
-  <rect x="1020" y="228" width="40" height="36" rx="6" class="plc"/>
-  <text x="1040" y="251" text-anchor="middle" class="tag" style="font-size:11px">SCADA</text>
-  <!-- Threat appears on one node, then shield responds -->
-  <circle cx="1060" cy="236" r="7" class="threat"/>
-  <rect x="1012" y="220" width="56" height="52" rx="10" class="shield"/>
-  <!-- Agent -->
-  <circle cx="900" cy="160" r="34" class="node"/>
-  <text x="900" y="156" text-anchor="middle" class="tag" style="font-size:12px;fill:#22D3EE">RL</text>
-  <text x="900" y="173" text-anchor="middle" class="tag" style="font-size:11px">agent</text>
+  <text x="692" y="252" class="lbl" style="font-size:11px;fill:#64748B">signal</text>
 </svg>

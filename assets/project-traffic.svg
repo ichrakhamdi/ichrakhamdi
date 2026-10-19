@@ -1,0 +1,45 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="580" height="250" viewBox="0 0 580 250" role="img" aria-labelledby="t d">
+  <title id="t">Network Traffic Classification</title>
+  <desc id="d">Deep learning · Security: Detects and classifies cyberattacks in network traffic. Compares LSTM, Transformer, CNN-Transformer and FT-Transformer in one configurable pipeline.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#0B1020"/>
+      <stop offset="0.55" stop-color="#121A33"/>
+      <stop offset="1" stop-color="#1B1240"/>
+    </linearGradient>
+    <linearGradient id="accent" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#22D3EE"/>
+      <stop offset="1" stop-color="#A78BFA"/>
+    </linearGradient>
+    <pattern id="grid" width="32" height="32" patternUnits="userSpaceOnUse">
+      <path d="M32 0H0V32" fill="none" stroke="#FFFFFF" stroke-opacity="0.04"/>
+    </pattern>
+    <style>
+      .h1{font:700 52px 'Segoe UI',Ubuntu,'Helvetica Neue',Arial,sans-serif;fill:#F8FAFC}
+      .h2{font:600 22px 'Segoe UI',Ubuntu,'Helvetica Neue',Arial,sans-serif;fill:url(#accent)}
+      .h3{font:500 17px 'Segoe UI',Ubuntu,'Helvetica Neue',Arial,sans-serif;fill:#CBD5E1}
+      .title{font:700 19px 'Segoe UI',Ubuntu,'Helvetica Neue',Arial,sans-serif;fill:#F8FAFC}
+      .org{font:600 14px 'Segoe UI',Ubuntu,'Helvetica Neue',Arial,sans-serif;fill:#CBD5E1}
+      .body{font:400 14px 'Segoe UI',Ubuntu,'Helvetica Neue',Arial,sans-serif;fill:#94A3B8}
+      .small{font:400 13px 'Segoe UI',Ubuntu,'Helvetica Neue',Arial,sans-serif;fill:#94A3B8}
+      .mono{font:600 12px ui-monospace,SFMono-Regular,Menlo,Consolas,monospace}
+      .chip{font:600 12px ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;fill:#E2E8F0}
+      .card{fill:#0F172A;stroke:#1E293B;stroke-width:1.5}
+      .link{font:600 13px ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;fill:#64748B}
+    </style>
+  </defs>
+  <rect width="580" height="250" rx="18" fill="url(#bg)"/>
+  <rect width="580" height="250" rx="18" fill="url(#grid)"/>
+<rect x="1" y="1" width="578" height="248" rx="17" fill="none" stroke="#22D3EE" stroke-opacity=".35"/>
+<rect x="28" y="0" width="80" height="3" rx="1.5" fill="#22D3EE"/>
+<text x="28" y="44" class="mono" fill="#22D3EE">DEEP LEARNING · SECURITY</text>
+<text x="28" y="76" class="title" style="font-size:22px">Network Traffic Classification</text>
+<text x="28" y="108" class="body">Detects and classifies cyberattacks in network traffic.</text>
+<text x="28" y="129" class="body">Compares LSTM, Transformer, CNN-Transformer and</text>
+<text x="28" y="150" class="body">FT-Transformer in one configurable pipeline.</text>
+<rect x="28" y="200" width="92" height="26" rx="13" fill="#22D3EE" fill-opacity="0.12" stroke="#22D3EE" stroke-opacity="0.45"/><text x="74" y="217" text-anchor="middle" class="chip">TensorFlow</text>
+<rect x="128" y="200" width="50" height="26" rx="13" fill="#22D3EE" fill-opacity="0.12" stroke="#22D3EE" stroke-opacity="0.45"/><text x="153" y="217" text-anchor="middle" class="chip">LSTM</text>
+<rect x="186" y="200" width="106" height="26" rx="13" fill="#22D3EE" fill-opacity="0.12" stroke="#22D3EE" stroke-opacity="0.45"/><text x="239" y="217" text-anchor="middle" class="chip">Transformers</text>
+<rect x="300" y="200" width="106" height="26" rx="13" fill="#22D3EE" fill-opacity="0.12" stroke="#22D3EE" stroke-opacity="0.45"/><text x="353" y="217" text-anchor="middle" class="chip">scikit-learn</text>
+<text x="552" y="44" text-anchor="end" class="link">view repo →</text>
+</svg>
